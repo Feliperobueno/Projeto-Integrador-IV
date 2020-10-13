@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Fazer uma nova solicitação</h1>
+<form>
+    <div>
+
+    <label for="tipo">Selecione o tipo de serviço</label>
+    <Select >
+        <option >Selecione o tipo de serviço a ser executado</option>
+        <option *ngFor="let tipo of tipos">{{ tipo }}</option>
+    </Select>
+
+    <label for="equipamento">Equipamento</label>
+    <select name="" id="">
+        <option value="">Selecione em qual equipamento deve ser executado</option>
+        <option *ngFor="let equipamento of equipamentos">{{ equipamento }}</option>
+    </select>
+
+    <fieldset disabled>
+    <label>Data</label>
+    <input type="text" class="form-control" placeholder="Aqui a data é automatica">
+    </fieldset>
+
+    <label for="equipamento">Local</label>
+    <select name="" id="">
+        <option value="">Selecione em qual sala deve ser executado</option>
+        <option *ngFor="let sala of local">{{ sala }}</option>
+    </select>
+
+    <label for="">Descrição</label>
+    <textarea name="" id="" cols="30" rows="3" placeholder="Digite em breves palavras o problema, melhoria ou manutenção"></textarea>
+    <button class="btn btn-outline-dark">Solicitar</button>
+    </div>
+
+</form>
+</div>

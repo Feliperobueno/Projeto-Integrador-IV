@@ -1,0 +1,130 @@
+/* Formatações gerais */
+a{
+    text-decoration: none;
+  }
+  
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  
+  /*Formatação geral do Menu*/
+  
+  #menu {
+    z-index: 1;
+    position: fixed;
+    width: 13%;
+    min-width: 120px;
+    height: 100%;
+    min-height: 100%;
+    background: #242348;
+  }
+  
+  /*Formatação do cabeçalho (titulo) do Menu*/
+  #menu header {
+    background-color:#242348;
+    font-size: 20px;
+    line-height: 52px;
+    text-align: center;
+  }
+  
+  #menu header a {
+    color: #fff;
+    display: block;
+  
+  }
+  
+  #menu header a:hover {
+    color: #fff;
+  }
+  /*Formatação geral dos links do Menu*/
+  
+  #menu .nav a{
+    display: inline-block;
+    width: 100%;
+    min-width: 100px;
+    color: #fff;
+    font-size: 1.3em;
+    padding: 10% 20%;
+    text-align: justify;
+  }
+  
+  #menu .nav a:hover{
+    background:#464467;
+    color: #fff;
+  }
+  
+  .active{
+    background-color: none;
+    border-left: 5px solid #fff ;
+  }
+  
+  /*Formatação geral das listas do Menu*/
+  
+  #menu li.menus{
+    border-bottom: 1px solid #455A64;
+    width: 100%;
+    min-width: 100px;
+  }
+  
+  #menu  li:hover.menus{
+    background-color: none;
+    border-left: 5px solid #fff;
+    
+  }
+
+  li#cadastro {
+    width: 100%;
+    min-width: 100px;
+  }
+
+  li:hover#cadastro {
+    background-color: none;
+  }
+
+  /*Configurando o submenu*/
+  .nav li:hover .submenu {
+    display: block;
+    max-height: 400px;
+  } 
+
+  .submenu a {
+    background-color: #242348;
+  }
+  
+  .submenu a:hover {
+    background-color: #464467;
+    border-left: 5px solid #fff;
+  }
+  
+  .submenu {
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.5s ease-out;
+  }
+  
+  
+  /* Formatação do nome de usuario logado */
+  
+  .NomeUsuario{
+    margin-top: 150%;
+    color: #fff;
+    width: 100%;
+    margin-left: 15%;
+  }
+  
+  .NomeUsuario a{
+    color: red;
+  }
+  
+  /*Formatação geral dos conteudos ao lado do menu*/
+  
+  #conteudo{
+    margin-left: 20%;
+    padding-top: 5%;
+    width: 70%;
+    height: 100%;
+  }
+
+
+  

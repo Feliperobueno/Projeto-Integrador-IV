@@ -1,3 +1,4 @@
+import { SolicitacoesCliComponent } from './paginas-cliente/solicitacoes-cli/solicitacoes-cli.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -6,10 +7,47 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IConfig, NgxMaskModule } from 'ngx-mask';
 
+import { LoginComponent } from './paginas-geral/login/login.component';
+import { CadastroComponent } from './paginas-geral/cadastro/cadastro.component';
+
+import { ContratoComponent } from './paginas-geral/contrato/contrato.component';
+import { CadastroSalaComponent } from './paginas-funcionario/cadastro-sala/cadastro-sala.component';
+import { CadastroFuncionarioComponent } from './paginas-funcionario/cadastro-funcionario/cadastro-funcionario.component';
+import { CadastroServicoComponent } from './paginas-funcionario/cadastro-servico/cadastro-servico.component';
+import { CadastroEquipamentoComponent } from './paginas-funcionario/cadastro-equipamento/cadastro-equipamento.component';
+import { MenuFunComponent } from './paginas-funcionario/menu-fun/menu-fun.component';
+import { MenuCliComponent } from './paginas-cliente/menu-cli/menu-cli.component';
+import { HistoricoFunComponent } from './paginas-funcionario/historico-fun/historico-fun.component';
+import { HistoricoCliComponent } from './paginas-cliente/historico-cli/historico-cli.component';
+import { HomeCliComponent } from './paginas-cliente/home-cli/home-cli.component';
+import { HomeFunComponent } from './paginas-funcionario/home-fun/home-fun.component';
+import { PerfilCliComponent } from './paginas-cliente/perfil-cli/perfil-cli.component';
+import { PerfilFunComponent } from './paginas-funcionario/perfil-fun/perfil-fun.component';
+import { SolicitacoesFunComponent } from './paginas-funcionario/solicitacoes-fun/solicitacoes-fun.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    CadastroComponent,
+    ContratoComponent,
+    CadastroSalaComponent,
+    CadastroFuncionarioComponent,
+    CadastroServicoComponent,
+    CadastroEquipamentoComponent,
+    MenuFunComponent,
+    MenuCliComponent,
+    HistoricoFunComponent,
+    HistoricoCliComponent,
+    HomeCliComponent,
+    HomeFunComponent,
+    PerfilCliComponent,
+    PerfilFunComponent,
+    SolicitacoesCliComponent,
+    SolicitacoesFunComponent
+    
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -17,6 +55,7 @@ import { IConfig, NgxMaskModule } from 'ngx-mask';
     NgxMaskModule.forRoot(),
     ReactiveFormsModule
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })

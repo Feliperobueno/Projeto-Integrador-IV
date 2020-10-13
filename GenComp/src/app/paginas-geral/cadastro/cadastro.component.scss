@@ -1,0 +1,149 @@
+body {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.brand-wrapper {
+    padding-top: 7px;
+    padding-bottom: 8px;
+
+
+}
+
+.login {
+
+    &-section-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 68px 13%;
+        background-color: #fff;
+
+        @media (max-width: 991px) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @media (max-width: 875px) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            min-height: 100vh;
+        }
+    }
+
+    &-wrapper {
+        width: 400px;
+        max-width: 100%;
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        @media (max-width: 675px) {
+            width: 100%;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #b0adad;
+        }
+
+        .form-control {
+            border: none;
+            border-bottom: 1px solid #e7e7e7;
+            border-radius: 0;
+            padding: 25px 5px;
+            min-height: 40px;
+            font-size: 18px;
+            font-weight: normal;
+    
+            &::placeholder {
+                color: #b0adad;
+            }
+        }
+
+        .login-btn {
+            padding: 10px 20px;
+            background-color: #242348;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 14px;
+            float: left;
+            width: 145px;
+
+    
+            &:hover {
+                border: 1px solid  #242348;
+                background-color: #fff;
+                color:  #242348;
+            }
+        }
+        .cadastro-btn {
+            padding: 10px 20px;
+            background-color: #fff;
+            border-radius: 25px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #242348;
+            margin-bottom: 14px;
+            float: left;
+            width: 145px;
+            border: 1px solid  #242348;
+
+    
+            &:hover {
+                border: 1px solid  #242348;
+                background-color: #242348;
+                color:  #fff;
+            }
+        }
+
+        a.forgot-password-link {
+            color: #080808;
+            font-size: 14px;
+            text-decoration: underline;
+            display: inline-block;
+            margin-bottom: 54px;
+
+            @media (max-width: 575px) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &-footer-text {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 0;
+        }
+    }
+
+    &-title {
+        font-size: 30px;
+        color: #000;
+        font-weight: bold;
+        margin-bottom: 25px;
+        margin-left: 35%;
+    }
+
+    &-img {
+        width: 100%;
+        height: 110vh;
+        object-fit: cover;
+        object-position: left;
+    }
+}
+
+#corDeFundo{
+    background-color: #242348;
+    height: 300vh;
+}
+
+
+.custom-select{
+    color: #000;
+}
+
+.errorSenha{
+    color: red;
+    font-size: 15px;
+
+}

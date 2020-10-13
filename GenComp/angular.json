@@ -31,7 +31,7 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js", 
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ]
           },
@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "GenComp"
+    }
+  },
+  "defaultProject": "GenComp",
+  "cli": {
+    "analytics": false
+  }
 }

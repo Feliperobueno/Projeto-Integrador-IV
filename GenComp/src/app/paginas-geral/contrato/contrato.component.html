@@ -1,0 +1,19 @@
+<div class="container">
+    <div id="head">
+        Para continuar é necessario concordar com o termo. 
+    
+    </div>
+
+
+<div class="pdf">
+    <iframe class="" src="../assets/contrato.pdf" width="100%" height="750" title="PDF in an i-Frame" frameborder="1" scrolling="auto"></iframe>
+    <br>
+    
+    
+    </div>
+    <div class="form-group">
+    <input type="checkbox" id="concordo" [(ngModel)]="checkConcordo">
+    <label for="concordo" class="form-check-label">Li e concordo com o termo</label>
+    <button class="btn btn-dark" [disabled]="checkConcordo == false">Continuar</button>
+    </div>
+</div>
