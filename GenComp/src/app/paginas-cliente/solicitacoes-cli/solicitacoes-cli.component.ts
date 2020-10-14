@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitacoesCliComponent implements OnInit {
 
-  tipos: string[] = ['Instalação de programas', 'conserto', 'Melhoria', 'Manutenção preventiva'];
+  tipos: string[] = ['Instalação de programas', 'Conserto', 'Melhoria', 'Manutenção preventiva'];
 
-  equipamentos: string[] = ['Computador de mesa', 'Notebook', 'Projetor', 'acessorios', 'switch', 'servidor']
+  equipamentos: string[] = ['Computador de mesa', 'Notebook', 'Projetor', 'Acessorios', 'Switch', 'Servidor'];
 
-  local: string[] = ['Sala 101', 'Sala 102', 'Sala 103', 'Sala 104', 'Sala 105']
+  local: string[] = ['Sala 101', 'Sala 102', 'Sala 103', 'Sala 104', 'Sala 105'];
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -8,19 +8,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  usuario="";
+  usuario;
 
-  senha = "";
+  senha;
 
-  erroUser = "Precisa ter ao menos 4 caracteres";
+  erroUser = 'Precisa ter ao menos 4 caracteres';
 
-  abrirHome(){
-    this.router.navigate(['/menu'])
-  }
-
-  
-
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

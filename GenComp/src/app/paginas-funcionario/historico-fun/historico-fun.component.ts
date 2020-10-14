@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoricoFunComponent implements OnInit {
 
-  OptionStatus: string[] = ['Aceito', 'Analisando', 'Em espera', 'Finalizado']
+  OptionStatus: string[] = ['Aceito', 'Analisando', 'Em espera', 'Finalizado'];
 
   constructor() { }
 

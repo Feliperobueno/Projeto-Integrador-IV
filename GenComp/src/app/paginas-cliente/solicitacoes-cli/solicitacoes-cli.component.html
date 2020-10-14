@@ -1,35 +1,55 @@
 <div class="container">
     <h1>Fazer uma nova solicitação</h1>
-<form>
-    <div>
 
-    <label for="tipo">Selecione o tipo de serviço</label>
-    <Select >
-        <option >Selecione o tipo de serviço a ser executado</option>
-        <option *ngFor="let tipo of tipos">{{ tipo }}</option>
-    </Select>
+    <form class="was-validated">
+        <div>
+            <div>
+                <label for="servico">Selecione o tipo de serviço</label>
+                <Select name="servico"  id="servico" required>
+                    <option value="" >Selecione o tipo de serviço a ser executado</option>
+                    <option value="{{ i }}" *ngFor="let tipo of tipos; let i = index">{{ tipo }}</option>
+                </Select>
+                <div class="invalid-feedback">
+                    Precisa selecionar um serviço
+                </div>
+            </div>
 
-    <label for="equipamento">Equipamento</label>
-    <select name="" id="">
-        <option value="">Selecione em qual equipamento deve ser executado</option>
-        <option *ngFor="let equipamento of equipamentos">{{ equipamento }}</option>
-    </select>
+            <div>
+                <label for="equipamento">Equipamento</label>
+                <select name="equipamento"  id="equipamento" required>
+                    <option value="">Selecione em qual equipamento deve ser executado</option>
+                    <option value="{{ i }}" *ngFor="let equipamento of equipamentos; let i = index">{{ equipamento }}</option>
+                </select>
+                <div class="invalid-feedback">
+                    Precisa selecionar um equipamento
+                </div>
+            </div>
 
-    <fieldset disabled>
-    <label>Data</label>
-    <input type="text" class="form-control" placeholder="Aqui a data é automatica">
-    </fieldset>
+            <fieldset disabled>
+                <label>Data</label>
+                <input type="text" class="form-control" placeholder="Aqui a data é automatica">
+            </fieldset>
 
-    <label for="equipamento">Local</label>
-    <select name="" id="">
-        <option value="">Selecione em qual sala deve ser executado</option>
-        <option *ngFor="let sala of local">{{ sala }}</option>
-    </select>
+            <div>
+                <label for="sala">Local</label>
+                <select name="" id="sala" required>
+                    <option value="">Selecione em qual sala deve ser executado</option>
+                    <option value="{{ i }}" *ngFor="let sala of local; let i = index">{{ sala }}</option>
+                </select>
+                <div class="invalid-feedback">
+                    Precisa selecionar uma sala
+                </div>
+            </div>
 
-    <label for="">Descrição</label>
-    <textarea name="" id="" cols="30" rows="3" placeholder="Digite em breves palavras o problema, melhoria ou manutenção"></textarea>
-    <button class="btn btn-outline-dark">Solicitar</button>
-    </div>
+            <div>
+                <label for="">Descrição</label>
+                <input type="text" class="form-control" placeholder="Digite em breves palavras o problema, melhoria ou manutenção" minlength="30" maxlength="250" required>
+                <div class="invalid-feedback">
+                    Precisa ter no minimo 30 caracteres e no maximo 250
+                </div>
+            </div>
 
-</form>
+            <button class="btn btn-outline-dark">Solicitar</button>
+        </div>
+    </form>
 </div>

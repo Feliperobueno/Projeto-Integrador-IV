@@ -45,7 +45,6 @@ import { SolicitacoesFunComponent } from './paginas-funcionario/solicitacoes-fun
     PerfilFunComponent,
     SolicitacoesCliComponent,
     SolicitacoesFunComponent
-    
   ],
 
   imports: [

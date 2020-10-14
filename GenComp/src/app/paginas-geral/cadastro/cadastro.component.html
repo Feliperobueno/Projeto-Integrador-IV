@@ -38,13 +38,13 @@
                   <input type="password" name="password" id="password" minlength="4" class="form-control" placeholder="Entre com sua senha" required autocomplete="current-password" [(ngModel)]="password">
 
                   <label for="confirm_password">Confirme a senha</label>
-                  <input type="password" name="confirm_password" id="confirm_password" minlength="4" class="form-control" placeholder="Entre com sua senha" required autocomplete="current-password" [(ngModel)]="confirm_password">
+                  <input type="password" name="confirm_password" id="confirm_password" minlength="4" class="form-control" placeholder="Entre com sua senha" required autocomplete="current-password" [(ngModel)]="confirmPassword">
                   <div class="errorSenha"> 
                     {{ erroSenhaDiferente }}
                   </div>    
                 
                 </div>
-                <button name="Cadastrar" id="cadastrar" class="btn login-btn" (click)="verificarSenha()" [disabled]="password != confirm_password">Cadastrar</button>
+                <button name="Cadastrar" id="cadastrar" class="btn login-btn" (click)="verificarSenha()" [disabled]="password != confirmPassword">Cadastrar</button>
                 <button name="login" id="login" class="btn cadastro-btn" style="margin-left: 100px;" >Login</button>
               </form>
             </div>
