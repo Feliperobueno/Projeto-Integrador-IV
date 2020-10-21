@@ -1,12 +1,14 @@
-<div class="container">
-    <form class="was-validated">
-        <h1>Cadastro de novos serviços prestados</h1>
-        <label for="sala">Serviços</label>
-        <input type="text" id="sala" class="form-control" placeholder="Digite o novo serviço" minlength="5" required>
-        <div class="invalid-feedback">
-            Precisa ter ao menos 5 letras
-        </div>
-        <button class="btn btn-outline-dark">Cadastrar</button>
-    </form>
+<div class="p-grid p-fluid">
+    <form action="" id="equipamentos"  class="was-validated">
+        <h1>Cadastro de novos serviços</h1>
+            <div class="cadastro">
+    
+                <span class="p-float-label">
+                    <input name="equipamentos" type="text" minlength="3" id="equipamento" pInputText [(ngModel)]="servico" required> 
+                    <label for="inputtext">Escreva o novo serviço</label>
+                </span>
+                <button pButton pRipple type="button" label="Cadastrar" class="p-button-rounded"></button>
+            </div>
+        </form>
 </div>
 

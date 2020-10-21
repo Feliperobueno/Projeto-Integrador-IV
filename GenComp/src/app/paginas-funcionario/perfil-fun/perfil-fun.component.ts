@@ -11,6 +11,8 @@ export class PerfilFunComponent implements OnInit {
 
   nome;
 
+  cpf_cnpj;
+
   usuario;
 
   email;

@@ -6,10 +6,30 @@ select{
     font-weight: normal;
     color: #353a40;
     border-radius: 20px;
-    width: 40%;
+    width: 50%;
     padding-left: 5%;
     border: 1px solid #353a40;
 }
+
 .table{
-    margin-top: 2%;
+    margin-top: 5%;
 }
+
+.cabeçalho{
+    background-color: hsla(210, 100%, 45%, 1);
+    color: white;
+    text-align: center;
+}
+
+td{
+    border-bottom: 1px solid #ADD8E6;
+    padding-top: 30px;
+    text-align: center;
+}
+
+
+h1{
+    color: hsla(210, 100%, 45%, 1);
+    text-align: center;
+}
+

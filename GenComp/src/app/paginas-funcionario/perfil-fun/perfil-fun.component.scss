@@ -1,39 +1,39 @@
-.form-control {
-    border: none;
-    border-bottom: 1px solid #e7e7e7;
-    border-radius: 0;
-    padding: 25px 5px;
-    min-height: 40px;
-    font-size: 18px;
-    font-weight: normal;
-    width: 100%;
-
-    &::placeholder {
-        color: #b0adad;
-    }
-}
-
-label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #b0adad;
-    margin-top: 2%;
+.inputs{
+    margin-top: 30px;
 }
 
 select{
     border: none;
-    border-bottom: 1px solid #e7e7e7;
-    border-radius: 0;
+    border-bottom: 1px solid #cecbcb;
     padding: 25px 5px;
-    min-height: 40px;
     font-size: 18px;
     font-weight: normal;
     width: 100% ;
+    height: 50px;
     color: #b0adad;
 }
-
-.btn{
+.p-button{
     width: 100%;
-    margin-top: 2%;
+    margin-top: 5%;
     font-size: 1.3em;
+    background-color: hsla(210, 100%, 45%, 1);
+    color: white;
+}
+.p-button:hover{
+    background-color: #008000;
+    transition-duration: 0.8s;
+    border: 1px solid  #008000;
+}
+h1{
+    color:  hsla(210, 100%, 45%, 1);
+    text-align: center;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid #cecbcb;
+
+    &:disabled{
+        background-color:  #cecbcb;
+    }
 }

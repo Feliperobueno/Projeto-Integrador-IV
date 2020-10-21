@@ -1,13 +1,13 @@
-<div class="container">
-    <h1>Cadastro de novas salas/Local</h1>
-    <form action="">
-        <div class="was-validated">
-            <label for="sala">Sala/local</label>
-            <input type="text" id="sala" class="form-control" placeholder="Digite o nome da nova sala/Local" minlength="3" [(ngModel)]="sala" required>
-            <div class="invalid-feedback">
-                É necessário digitar o nome da sala com ao menos 3 caracteres. 
+<div class="p-grid p-fluid">
+    <form action="" id="equipamentos"  class="was-validated">
+        <h1>Cadastro de novas salas</h1>
+            <div class="cadastro">
+    
+                <span class="p-float-label">
+                    <input name="equipamentos" type="text" minlength="3" id="equipamento" pInputText [(ngModel)]="sala" required> 
+                    <label for="inputtext">Escreva o nome da nova sala</label>
+                </span>
+                <button pButton pRipple type="button" label="Cadastrar" class="p-button-rounded"></button>
             </div>
-        </div>
-        <button class="btn btn-outline-dark" [disabled]="sala.length <= 3">Cadastrar</button>
-    </form>
+        </form>
 </div>

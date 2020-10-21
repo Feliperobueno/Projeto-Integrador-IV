@@ -1,35 +1,62 @@
-<div class="container">
+<div class="p-grid p-fluid">
     <h1>Cadastro de novos funcionários</h1>
     <div>
-        <form name="cadastroFun" class="was-validated">
-            <label>Nome</label>
-            <input name="nome" type="text" class="form-control" [(ngModel)]="nome" required>
+        <form name="cadastroFun" >
+            <div class="cadastro">
+                <span class="p-float-label">
+                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="nome" autocomplete="name" required> 
+                    <label for="nome">Digite o nome completo do funcionário</label>
+                </span>
+            </div>
+            <div class="inputs">
+                <span class="p-float-label">
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" type="text" pInputText [(ngModel)]="cpf_cnpj" mask="000.000.000-00 || 00.000.000/0000-00" required>
+                    <label for="CPF/CNPJ">CPF ou CNPJ</label>
+                </span> 
+            </div>
 
-            <label>CPF/CNPJ</label>
-            <input name="cpf_cnpj" type="text" id="cpf_cnpj" class="form-control" minlength="11" maxlength="18"  mask="000.000.000-00||00.000.000/0000-00" placeholder="000.000.000-00" required>
+            <div class="inputs">
+                <span class="p-float-label">
+                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="email" required autocomplete="email"> 
+                    <label for="email">Digite o E-mail</label>
+                </span>
+            </div>
+            <div class="inputs">
+                <span class="p-float-label">
+                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000" autocomplete="tel">
+                    <label for="telefone">Telefone</label>
+                </span> 
+            </div>
 
-            <label>Email</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="exemplo@exemplo.com.br" [(ngModel)]="email" required autocomplete="email">
+            <div class="inputs">
+                <span class="p-float-label">
+                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="usuario" required autocomplete="username"> 
+                    <label for="user">Digite o usuário</label>
+                </span>
+            </div>
 
-            <label>Telefone</label>
-            <input  type="tel" name="telefone" id="telefone" class="form-control" placeholder="(00) 0000-0000" mask="(00) 0000-0000||(00) 00000-0000" [(ngModel)]="telefone" required>
+            <div class="inputs">
+                <label for="funcoes">Função do novo funcionario</label>
+                <select name="funcoes" id="funcoes" required >
+                    <option value="">Selecione a função do funcionario</option>
+                    <option *ngFor="let funcao of funcoes">{{ funcao }}</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <span class="p-float-label">
+                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="password" autocomplete="new-password"/>
+                    <label for="password">Digite a senha</label>
+                </span>
+            </div>
+            
+            <div class="inputs">
+                <span class="p-float-label">
+                    <input name="confirmPassword" type="password" minlength="4" maxlength="16" pPassword id="confirmPassword" [(ngModel)]="confirmPassword" autocomplete="new-password"/>
+                    <label for="confirmPassword">Digite novamente a senha</label>
+                </span>
+            </div>
 
-            <label>Login/Usuário</label>
-            <input type="text" name="user" id="user" class="form-control" placeholder="exemplo1234" [(ngModel)]="usuario" required autocomplete="username">
-
-            <label for="funcoes">Funções</label>
-            <select name="funcoes" id="funcoes" required [(ngModel)]="funcaoFun">
-                <option value="">Selecione a função do funcionario</option>
-                <option *ngFor="let funcao of funcoes">{{ funcao }}</option>
-            </select>
-
-            <label for="password">Senha</label>
-            <input name="senha" type="password" name="password" id="password" minlength="4" class="form-control" placeholder="Entre com sua senha" required autocomplete="current-password" [(ngModel)]="password">
-
-            <label for="confirm_password">Confirme a senha</label>
-            <input name="confirm_senha" type="password" name="confirm_password" id="confirm_password" minlength="4" class="form-control" placeholder="Entre com sua senha" required autocomplete="current-password" [(ngModel)]="confirmPassword">
-
-            <button class="btn btn-outline-dark" (click)="verificarSenha()" [disabled]="password != confirmPassword">Cadastrar</button>
+            <button pButton pRipple type="button" label="Cadastrar" class="p-button-rounded "[disabled]="password != confirmPassword"></button>
         </form>
     </div>
 </div>

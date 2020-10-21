@@ -11,6 +11,8 @@ export class CadastroFuncionarioComponent implements OnInit {
 
   nome;
 
+  cpf_cnpj;
+
   usuario;
 
   email;

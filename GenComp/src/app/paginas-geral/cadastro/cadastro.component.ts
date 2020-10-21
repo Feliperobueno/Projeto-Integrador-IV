@@ -9,6 +9,8 @@ export class CadastroComponent implements OnInit {
 
   usuario;
 
+  cpf_cnpj;
+
   email;
 
   telefone;

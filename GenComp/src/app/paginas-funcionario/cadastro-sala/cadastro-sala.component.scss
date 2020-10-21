@@ -1,39 +1,29 @@
-.form-control {
-    border: none;
-    border-bottom: 1px solid #e7e7e7;
-    border-radius: 0;
-    padding: 25px 5px;
-    min-height: 40px;
-    font-size: 18px;
-    font-weight: normal;
+.p-button{
     width: 100%;
-
-    &::placeholder {
-        color: #b0adad;
-    }
-}
-
-label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #b0adad;
-    margin-top: 2%;
-}
-
-select{
-    border: none;
-    border-bottom: 1px solid #e7e7e7;
-    border-radius: 0;
-    padding: 25px 5px;
-    min-height: 40px;
-    font-size: 18px;
-    font-weight: normal;
-    width: 100% ;
-    color: #b0adad;
-}
-
-.btn{
-    width: 100%;
-    margin-top: 2%;
+    margin-top: 5%;
     font-size: 1.3em;
+    background-color: hsla(210, 100%, 45%, 1);
+    color: white;
+}
+.p-button:hover{
+    background-color: #008000;
+    transition-duration: 0.8s;
+    border: 1px solid  #008000;
+}
+
+.cadastro{
+    margin-top: 5%;
+}
+
+input{
+    width: 100%;
+    border:  none;
+    border-bottom: 1px solid  #cecbcb;
+    height: 50px;
+}
+
+
+h1{
+    color:  hsla(210, 100%, 45%, 1);
+    text-align: center;
 }

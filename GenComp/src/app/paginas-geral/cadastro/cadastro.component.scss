@@ -10,6 +10,10 @@ body {
 
 }
 
+.row{
+    margin: 0;
+}
+
 .login {
 
     &-section-wrapper {
@@ -59,43 +63,6 @@ body {
             }
         }
 
-        .login-btn {
-            padding: 10px 20px;
-            background-color: #242348;
-            border-radius: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-            margin-bottom: 14px;
-            float: left;
-            width: 145px;
-
-    
-            &:hover {
-                border: 1px solid  #242348;
-                background-color: #fff;
-                color:  #242348;
-            }
-        }
-        .cadastro-btn {
-            padding: 10px 20px;
-            background-color: #fff;
-            border-radius: 25px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #242348;
-            margin-bottom: 14px;
-            float: left;
-            width: 145px;
-            border: 1px solid  #242348;
-
-    
-            &:hover {
-                border: 1px solid  #242348;
-                background-color: #242348;
-                color:  #fff;
-            }
-        }
 
         a.forgot-password-link {
             color: #080808;
@@ -116,34 +83,69 @@ body {
         }
     }
 
-    &-title {
-        font-size: 30px;
-        color: #000;
-        font-weight: bold;
-        margin-bottom: 25px;
-        margin-left: 35%;
+    &-title{
+        text-align: center;
+        color: hsla(210, 100%, 45%, 1);
+        margin-bottom: 20%;
     }
 
     &-img {
         width: 100%;
-        height: 110vh;
+        height: 100vh;
         object-fit: cover;
         object-position: left;
+        background-image: linear-gradient(0deg, hsla(234, 57%, 47%, 1) 0%, hsla(210, 100%, 45%, 1) 100%)
     }
 }
 
-#corDeFundo{
-    background-color: #242348;
-    height: 300vh;
-}
-
-
-.custom-select{
-    color: #000;
-}
 
 .errorSenha{
     color: red;
     font-size: 15px;
 
+}
+
+input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #b0adad;
+    height: 40px;
+}
+
+.pInputText {
+    font-size: 1rem;
+    color: #495057;
+    background: #ffffff;
+    padding: 0.5rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid red;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    border-radius: 3px;
+}
+
+.inputs{
+    margin-top: 40px;
+}
+
+#cadastro.p-button{
+    width: 40%;
+    margin-top: 15%;
+    background-color:  hsla(210, 100%, 45%, 1);
+
+    &:hover{
+        background-color:  #469536;
+        transition-duration: 1s;
+        border-color: #469536;
+    }
+}
+
+
+
+#login.p-button{
+    margin-left: 20%;
+    width: 40%;
+    margin-top: 15%;
+    background-color: white;
+    color:  hsla(210, 100%, 45%, 1);
 }

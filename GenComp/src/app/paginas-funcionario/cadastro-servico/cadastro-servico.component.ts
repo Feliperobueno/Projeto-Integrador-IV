@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastro-servico.component.scss']
 })
 export class CadastroServicoComponent implements OnInit {
+  
+  servico;
 
   constructor() { }
 

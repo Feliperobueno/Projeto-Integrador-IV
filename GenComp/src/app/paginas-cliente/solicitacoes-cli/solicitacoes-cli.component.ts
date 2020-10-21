@@ -13,6 +13,10 @@ export class SolicitacoesCliComponent implements OnInit {
 
   local: string[] = ['Sala 101', 'Sala 102', 'Sala 103', 'Sala 104', 'Sala 105'];
 
+  descricao;
+
+  data;
+
   constructor() { }
 
   ngOnInit(): void {

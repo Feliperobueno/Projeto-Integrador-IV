@@ -6,6 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil-cli.component.scss']
 })
 export class PerfilCliComponent implements OnInit {
+  
+  nome;
+
+  cpf_cnpj;
+
+  usuario;
+
+  email;
+
+  telefone;
+
+
+  password;
+
+  confirmPassword;
 
   constructor() { }
 

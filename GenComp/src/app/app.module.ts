@@ -24,6 +24,15 @@ import { HomeFunComponent } from './paginas-funcionario/home-fun/home-fun.compon
 import { PerfilCliComponent } from './paginas-cliente/perfil-cli/perfil-cli.component';
 import { PerfilFunComponent } from './paginas-funcionario/perfil-fun/perfil-fun.component';
 import { SolicitacoesFunComponent } from './paginas-funcionario/solicitacoes-fun/solicitacoes-fun.component';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
+import { RippleModule } from 'primeng/ripple';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import { InputMaskModule } from 'primeng/inputmask';
+import { InputNumberModule } from 'primeng/inputnumber';
+import {PasswordModule} from 'primeng/password';
+import {TableModule} from 'primeng/table';
+import {ToggleButtonModule} from 'primeng/togglebutton';
 
 @NgModule({
   declarations: [
@@ -52,7 +61,16 @@ import { SolicitacoesFunComponent } from './paginas-funcionario/solicitacoes-fun
     AppRoutingModule,
     FormsModule,
     NgxMaskModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTextModule,
+    ButtonModule,
+    RippleModule,
+    SplitButtonModule,
+    InputMaskModule,
+    InputNumberModule,
+    PasswordModule,
+    TableModule,
+    ToggleButtonModule
   ],
 
   providers: [],

@@ -1,18 +1,26 @@
+
 #head{
-    background-color: #23272b;
+    background-color: hsla(210, 100%, 45%, 1);
     width: 100%;
     padding: 2%;
     color: white;
     text-align: center;
 }
 
-.btn{
-width: 100%;
-margin-top: 1%;
-height: 50px;
+#cadastro.p-button{
+    width: 100%;
+    margin-top: 1%;
+    background-color:  hsla(210, 100%, 45%, 1);
+
+    &:hover{
+        background-color:  #469536;
+        transition-duration: 1s;
+        border-color: #469536;
+    }
 }
 
 label{
     font-weight: bold;
     margin-left: 1%;
+    font-size: 1.1em;
 }

@@ -1,55 +1,47 @@
-<div class="container">
+<div class="p-grid p-fluid">
     <h1>Fazer uma nova solicitação</h1>
 
     <form class="was-validated">
         <div>
-            <div>
+            <div class="inputs">
                 <label for="servico">Selecione o tipo de serviço</label>
                 <Select name="servico"  id="servico" required>
                     <option value="" >Selecione o tipo de serviço a ser executado</option>
                     <option value="{{ i }}" *ngFor="let tipo of tipos; let i = index">{{ tipo }}</option>
                 </Select>
-                <div class="invalid-feedback">
-                    Precisa selecionar um serviço
-                </div>
+
             </div>
 
-            <div>
+            <div class="inputs">
                 <label for="equipamento">Equipamento</label>
                 <select name="equipamento"  id="equipamento" required>
                     <option value="">Selecione em qual equipamento deve ser executado</option>
                     <option value="{{ i }}" *ngFor="let equipamento of equipamentos; let i = index">{{ equipamento }}</option>
                 </select>
-                <div class="invalid-feedback">
-                    Precisa selecionar um equipamento
-                </div>
+
             </div>
 
-            <fieldset disabled>
+            <div class="inputs">
                 <label>Data</label>
-                <input type="text" class="form-control" placeholder="Aqui a data é automatica">
-            </fieldset>
+                <input name="data" type="date" minlength="11" id="data" pInputText [(ngModel)]="data" required autocomplete="bday-day" disabled>
+            </div>
 
-            <div>
+            <div class="inputs">
                 <label for="sala">Local</label>
                 <select name="" id="sala" required>
                     <option value="">Selecione em qual sala deve ser executado</option>
                     <option value="{{ i }}" *ngFor="let sala of local; let i = index">{{ sala }}</option>
                 </select>
-                <div class="invalid-feedback">
-                    Precisa selecionar uma sala
-                </div>
+
             </div>
 
-            <div>
-                <label for="">Descrição</label>
-                <input type="text" class="form-control" placeholder="Digite em breves palavras o problema, melhoria ou manutenção" minlength="30" maxlength="250" required>
-                <div class="invalid-feedback">
-                    Precisa ter no minimo 30 caracteres e no maximo 250
-                </div>
+            <div class="inputs">
+                <span class="p-float-label">
+                    <textarea name="descricao" type="text" minlength="30" maxlength="250" pInputText id="descricao" [(ngModel)]="descricao" autocomplete="new-password"></textarea>
+                    <label for="descricao">Digite em breves palavras o problema a ser resolvido</label>
+                </span>
             </div>
-
-            <button class="btn btn-outline-dark">Solicitar</button>
+            <button pButton pRipple type="button" label="Cadastrar" class="p-button-raised "></button>
         </div>
     </form>
 </div>
