@@ -6,6 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import com.GenCompBackend.anotations.CpfCnpjAnotation;
+import com.GenCompBackend.anotations.EmailAnotation;
+import com.GenCompBackend.anotations.PerfilAnotation;
+import com.GenCompBackend.anotations.SenhaAnotation;
+import com.GenCompBackend.anotations.TelefoneAnotation;
 
 @Entity
 @Table(name = "pessoa")
@@ -17,27 +24,40 @@ public class Pessoa {
 	private Long id;
 	
 	@Column(name="nome")
+	@NotNull
 	private String nome;
 	
 	@Column(name="cpfcnpj")
+	@NotNull
+	@CpfCnpjAnotation
 	private String cpfCnpj;
 	
 	@Column(name="telefone")
+	@NotNull
+	@TelefoneAnotation
 	private String telefone;
 	
 	@Column(name="email")
+	@NotNull
+	@EmailAnotation
 	private String email;
 	
 	@Column(name="funcao")
+	@NotNull
 	private String funcao;
 	
 	@Column(name="login")
+	@NotNull
 	private String login;
 	
 	@Column(name="senha")
+	@NotNull
+	@SenhaAnotation
 	private String senha;
 	
 	@Column(name="perfil")
+	@NotNull
+	@PerfilAnotation
 	private String perfil;
 
 	public Long getId() {

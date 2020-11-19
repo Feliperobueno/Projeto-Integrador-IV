@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+import com.GenCompBackend.anotations.DataAnotation;
 
 @Entity
 @Table(name="ordemservico")
@@ -22,30 +25,39 @@ public class OrdemServico {
 	
 	@ManyToOne
 	@JoinColumn(name="id_funcionario")
+	@NotNull
 	private Pessoa funcionario;
 	
 	@ManyToOne
 	@JoinColumn(name="id_cliente")
+	@NotNull
 	private Pessoa cliente;
 	
 	@ManyToOne
 	@JoinColumn(name="id_tiposervico")
+	@NotNull
 	private TipoServico tipoServico;
 	
 	@Column(name="dataemissao")
+	@NotNull
 	private Date dataEmissao;
 	
 	@Column(name="datafechamento")
+	@DataAnotation
+	@NotNull
 	private Date dataFechamento;
 	
 	@Column(name="status")
+	@NotNull
 	private String status;
 	
 	@Column(name="descricao")
+	@NotNull
 	private String descricao;
 	
 	@ManyToOne
 	@JoinColumn(name="id_local")
+	@NotNull
 	private LaboratorioSala laboratorioSala;
 
 	public Long getId() {
