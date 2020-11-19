@@ -4,14 +4,14 @@
         <form name="cadastroFun" class="was-validated">
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="nome" autocomplete="name" disabled> 
+                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="obj.nome" autocomplete="name" disabled> 
                     <label for="nome">Nome completo</label>
                 </span>
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="cpf_cnpj" mask="000.000.000-00 || 00.000.000/0000-00" disabled>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="obj.cpfcnpj" mask="000.000.000-00 || 00.000.000/0000-00" disabled>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>
@@ -19,14 +19,14 @@
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="email" required autocomplete="email"> 
+                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="obj.email" required autocomplete="email"> 
                     <label for="email">Digite o E-mail</label>
                 </span>
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000">
+                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="obj.telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000">
                     <label for="telefone">Telefone</label>
                 </span> 
             </div>
@@ -34,14 +34,14 @@
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="usuario" required autocomplete="username" disabled> 
+                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="obj.login" required autocomplete="username" disabled> 
                     <label for="user">Usuário</label>
                 </span>
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="password" autocomplete="new-password"/>
+                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="obj.senha" [(ngModel)]="password" autocomplete="new-password"/>
                     <label for="password">Digite a nova senha</label>
                 </span>
             </div>
