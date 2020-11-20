@@ -12,12 +12,18 @@ import { PerfilFunComponent } from './paginas-funcionario/perfil-fun/perfil-fun.
 import { SolicitacoesFunComponent } from './paginas-funcionario/solicitacoes-fun/solicitacoes-fun.component';
 import { CadastroFuncionarioComponent } from './paginas-funcionario/cadastro-funcionario/cadastro-funcionario.component';
 import { CadastroServicoComponent } from './paginas-funcionario/cadastro-servico/cadastro-servico.component';
+import { LoginComponent } from './paginas-geral/login/login.component';
+import { CadastroComponent } from './paginas-geral/cadastro/cadastro.component';
+import { ContratoComponent } from './paginas-geral/contrato/contrato.component';
+import { MenuCliComponent } from './paginas-cliente/menu-cli/menu-cli.component';
+import { MenuFunComponent } from './paginas-funcionario/menu-fun/menu-fun.component';
 
 
 const routes: Routes = [
   /* Routes de cliente*/
 
-  {path: '', component: HomeCliComponent, pathMatch: 'full'},
+  {path: '', component: LoginComponent, pathMatch: 'full'},
+  {path: 'menu-cli', component: MenuCliComponent},
   {path: 'home-cli', component: HomeCliComponent},
   {path: 'historico-cli', component: HistoricoCliComponent},
   {path: 'perfil-cli', component: PerfilCliComponent},
@@ -26,6 +32,7 @@ const routes: Routes = [
   /* Routes de funcionario*/
 
   {path: 'home-fun', component: HomeFunComponent},
+  {path: 'menu-fun', component: MenuFunComponent},
   {path: 'historico-fun', component: HistoricoFunComponent},
   {path: 'perfil-fun', component: PerfilFunComponent},
   {path: 'solicitacoes-fun', component: SolicitacoesFunComponent},
@@ -33,6 +40,12 @@ const routes: Routes = [
   {path: 'cadastro-equipamento', component: CadastroEquipamentoComponent},
   {path: 'cadastro-funcionario', component: CadastroFuncionarioComponent},
   {path: 'cadastro-servico', component: CadastroServicoComponent},
+
+  /* Routes gerais */
+
+  {path: 'login', component: LoginComponent},
+  {path: 'cadastro', component: CadastroComponent},
+  {path: 'contrato', component: ContratoComponent}
 
 ];
 

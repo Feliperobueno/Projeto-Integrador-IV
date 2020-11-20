@@ -12,7 +12,7 @@
     <div class="form-group">
         <p-toggleButton [(ngModel)]="checkConcordo" id="concordo" onIcon="pi pi-check" offIcon="pi pi-times"></p-toggleButton>
     <label for="concordo">Li e concordo com o termo</label>
-    <button pButton pRipple type="button" id="cadastro" label="Continuar" class="p-button-rounded button-cadastro"[disabled]="checkConcordo == false"></button>
+    <button pButton pRipple type="button" (click)="aceito()" id="cadastro" label="Continuar" class="p-button-rounded button-cadastro"[disabled]="checkConcordo == false"></button>
     </div>
 </div>
 </body>

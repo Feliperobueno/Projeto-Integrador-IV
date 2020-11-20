@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,9 +15,19 @@ export class LoginComponent implements OnInit {
 
   erroUser = 'Precisa ter ao menos 4 caracteres';
 
-  constructor() { }
+
+  Cadastro() {
+    this.router.navigate(['/cadastro']);
+  }
+
+  loginSuccess() {
+    this.router.navigate(['/contrato']);
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
 
 }

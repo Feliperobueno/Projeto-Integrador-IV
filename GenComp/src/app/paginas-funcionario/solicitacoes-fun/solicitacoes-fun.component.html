@@ -19,7 +19,8 @@
             <td>Arrumar computador</td>
             <td>Aberto</td>
             <td>
-              <button pButton pRipple type="button" label="Aceitar" class="p-button-rounded"></button>
+              <button pButton pRipple type="button" label="Aceitar" (click)="openModal(template)" class="p-button-rounded"></button>
+
             </td>
           </tr>
           <tr>
@@ -56,3 +57,28 @@
         </tbody>
       </table>
     </div>
+
+    <!-- Template da modal -->
+    <ng-template #template>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Aceitar chamado</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="funcionarios">Funcionario</label>
+        <select name="funcionarios" id="funcionarios">
+          <option value="">Selecione o funcionario</option>
+          <option value="{{ i }}" *ngIf="let funcionarios of funcionarios; let i = index">{{ funcionarios }}</option>
+        </select>
+
+        <label for="servico">Serviço</label>
+        <select name="servico" id="servico">
+          <option value="">Selecione o serviço</option>
+          <option value="{{ i }}" *ngIf="let servico of servico; let i = index">{{ servico }}</option>
+        </select>
+
+        <button pButton pRipple type="button" label="Salvar" class="p-button-rounded"(click)="modalRef.hide()"></button>
+      </div>
+    </ng-template>

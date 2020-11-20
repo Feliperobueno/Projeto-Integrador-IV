@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -24,6 +25,14 @@ export class CadastroComponent implements OnInit {
 
   erroSenhaDiferente;
 
+  cadastroSuccess() {
+    this.router.navigate(['/contrato']);
+  }
+
+  login(){
+    this.router.navigate(['/login']);
+  }
+
 
   verificarSenha(): void{
     if
@@ -38,7 +47,7 @@ export class CadastroComponent implements OnInit {
     console.log(this.erroSenhaDiferente);
    }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

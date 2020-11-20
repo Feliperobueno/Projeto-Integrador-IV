@@ -33,6 +33,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import {PasswordModule} from 'primeng/password';
 import {TableModule} from 'primeng/table';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 @NgModule({
   declarations: [
@@ -70,7 +72,8 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
     InputNumberModule,
     PasswordModule,
     TableModule,
-    ToggleButtonModule
+    ToggleButtonModule,
+    ModalModule.forRoot()
   ],
 
   providers: [],

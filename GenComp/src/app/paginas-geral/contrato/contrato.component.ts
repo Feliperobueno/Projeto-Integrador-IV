@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contrato',
@@ -9,7 +10,11 @@ export class ContratoComponent implements OnInit {
 
   checkConcordo = false;
 
-  constructor() { }
+  aceito() {
+    this.router.navigate(['/menu-cli']);
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
