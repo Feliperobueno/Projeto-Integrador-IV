@@ -35,16 +35,16 @@ public class OrdemServico {
 	
 	@ManyToOne
 	@JoinColumn(name="id_tiposervico")
-	@NotNull
+
 	private TipoServico tipoServico;
 	
 	@Column(name="dataemissao")
-	@NotNull
+	
 	private Date dataEmissao;
 	
 	@Column(name="datafechamento")
 	@DataAnotation
-	@NotNull
+	
 	private Date dataFechamento;
 	
 	@Column(name="status")
@@ -59,6 +59,10 @@ public class OrdemServico {
 	@JoinColumn(name="id_local")
 	@NotNull
 	private LaboratorioSala laboratorioSala;
+	
+	@ManyToOne
+	@JoinColumn(name="id_equipamento")
+	private Equipamento equipamento;
 
 	public Long getId() {
 		return id;
@@ -131,5 +135,15 @@ public class OrdemServico {
 	public void setLaboratorioSala(LaboratorioSala laboratorioSala) {
 		this.laboratorioSala = laboratorioSala;
 	}
+
+	public Equipamento getEquipamento() {
+		return equipamento;
+	}
+
+	public void setEquipamento(Equipamento equipamento) {
+		this.equipamento = equipamento;
+	}
+	
+	
 
 }

@@ -5,8 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -19,10 +17,6 @@ public class Equipamento {
 	@Column(name="id")
 	private Long id;
 	
-	@ManyToOne
-	@JoinColumn(name="id_laboratorioSala")
-	@NotNull
-	private LaboratorioSala laboratorioSala;
 	
 	@Column(name="nome")
 	@NotNull
@@ -36,13 +30,6 @@ public class Equipamento {
 		this.id = id;
 	}
 
-	public LaboratorioSala getLaboratorioSala() {
-		return laboratorioSala;
-	}
-
-	public void setLaboratorioSala(LaboratorioSala laboratorioSala) {
-		this.laboratorioSala = laboratorioSala;
-	}
 
 	public String getNome() {
 		return nome;
