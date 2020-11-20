@@ -79,6 +79,12 @@
           <option value="{{ i }}" *ngIf="let servico of servico; let i = index">{{ servico }}</option>
         </select>
 
+        <label for="equipamento">Equipamento</label>
+        <select name="equipamento" id="equipamento">
+          <option value="">Selecione o Equipamento</option>
+          <option value="{{ i }}" *ngIf="let equipamento of equipamento; let i = index">{{ equipamento }}</option>
+        </select>
+
         <button pButton pRipple type="button" label="Salvar" class="p-button-rounded"(click)="modalRef.hide()"></button>
       </div>
     </ng-template>

@@ -12,6 +12,8 @@ export class SolicitacoesFunComponent implements OnInit {
 
   servico: string[] = ['Arrumar', 'ver', 'instalar', 'quebrar'];
 
+  equipamento: string[] = ['Computador', 'projetor', 'Swhitch', 'Servidor'];
+
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService) {}
  
