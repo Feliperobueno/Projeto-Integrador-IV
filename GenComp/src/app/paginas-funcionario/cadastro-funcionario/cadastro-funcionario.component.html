@@ -36,12 +36,11 @@
             </div>
 
             <div class="inputs">
-                <label for="funcoes">Função do novo funcionario</label>
-                <select name="funcoes" id="funcoes" required >
-                    <option value="">Selecione a função do funcionario</option>
-                    <option *ngFor="let funcao of funcoes">{{ funcao }}</option>
-                </select>
-            </div>
+                <span class="p-float-label">
+                    <input name="funcao" type="text" minlength="3" id="funcao" pInputText [(ngModel)]="obj.funcao" autocomplete="name" required> 
+                    <label for="funcao">Função</label>
+                </span>
+              </div>
             <div class="inputs">
                 <span class="p-float-label">
                     <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="obj.senha" autocomplete="new-password"/>

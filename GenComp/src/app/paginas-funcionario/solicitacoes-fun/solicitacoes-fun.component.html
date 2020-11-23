@@ -6,54 +6,24 @@
             <th scope="col">Código</th>
             <th scope="col">Data Solic</th>
             <th scope="col">Cliente</th>
-            <th scope="col">Tipo serviço</th>
+            <th scope="col">Descrição</th>
             <th scope="col">Status</th>
             <th scope="col">Ações</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td scope="row">001</td>
-            <td>01/10/2020</td>
-            <td>Felipe</td>
-            <td>Arrumar computador</td>
-            <td>Aberto</td>
+          <tr *ngFor="let p of listaOs">
+            <td scope="row">{{p.id}}</td>
+            <td>{{p.dataEmissao}}</td>
+            <td>p.cliente.nome</td>
+            <td>p.descricao</td>
+            <td>p.status</td>
             <td>
               <button pButton pRipple type="button" label="Aceitar" (click)="openModal(template)" class="p-button-rounded"></button>
 
             </td>
           </tr>
-          <tr>
-            <td scope="row">002</td>
-            <td>02/10/2020</td>
-            <td>Felipe</td>
-            <td>Arrumar computador</td>
-            <td>Aberto</td>
-            <td>
-              <button pButton pRipple type="button" label="Aceitar" class="p-button-rounded"></button>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">003</td>
-            <td>03/10/2020</td>
-            <td>Felipe</td>
-            <td>Arrumar computador</td>
-            <td>Aberto</td>
-            <td>
-              <button pButton pRipple type="button" label="Aceitar" class="p-button-rounded"></button>
-            </td>
-          </tr>
-          <tr>
-            <td scope="row">004</td>
-            <td>03/10/2020</td>
-            <td>Felipe</td>
-            <td>Arrumar computador</td>
-            <td>Aberto</td>
-            <td>
-              <button pButton pRipple type="button" label="Aceitar" class="p-button-rounded"></button>
-            </td>
-          </tr>
-          
+                   
         </tbody>
       </table>
     </div>
@@ -68,21 +38,15 @@
       </div>
       <div class="modal-body">
         <label for="funcionarios">Funcionario</label>
-        <select name="funcionarios" id="funcionarios">
+        <select name="funcionarios" id="funcionarios" on-change="atribuirServico(a.value)" #a>
           <option value="">Selecione o funcionario</option>
-          <option value="{{ i }}" *ngIf="let funcionarios of funcionarios; let i = index">{{ funcionarios }}</option>
+          <option *ngFor="let p of listaFuncionario" value="{{p}}">{{p.nome}}</option>
         </select>
 
         <label for="servico">Serviço</label>
-        <select name="servico" id="servico">
+        <select name="servico" id="servico" on-change="atribuirServico(a.value)" #a>
           <option value="">Selecione o serviço</option>
-          <option value="{{ i }}" *ngIf="let servico of servico; let i = index">{{ servico }}</option>
-        </select>
-
-        <label for="equipamento">Equipamento</label>
-        <select name="equipamento" id="equipamento">
-          <option value="">Selecione o Equipamento</option>
-          <option value="{{ i }}" *ngIf="let equipamento of equipamento; let i = index">{{ equipamento }}</option>
+          <option *ngFor="let p of listaServico" value="{{p}}">{{p.descricao}}</option>
         </select>
 
         <button pButton pRipple type="button" label="Salvar" class="p-button-rounded"(click)="modalRef.hide()"></button>
