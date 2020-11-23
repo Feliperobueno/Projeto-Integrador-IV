@@ -5,43 +5,43 @@
         <div>
             <div class="inputs">
                 <label for="servico">Selecione o tipo de serviço</label>
-                <Select name="servico"  id="servico" required>
+                <Select name="servico"  id="servico" on-change="atribuirServico(a.value)" #a required>
                     <option value="" >Selecione o tipo de serviço a ser executado</option>
-                    <option value="{{ i }}" *ngFor="let tipo of tipos; let i = index">{{ tipo }}</option>
+                    <option *ngFor="let p of listaServico" value="{{p}}">{{p.descricao}}</option>
                 </Select>
 
             </div>
 
             <div class="inputs">
                 <label for="equipamento">Equipamento</label>
-                <select name="equipamento"  id="equipamento" required>
+                <select name="equipamento"  id="equipamento" on-change="atribuirEquipamento(a.value)" #a required>
                     <option value="">Selecione em qual equipamento deve ser executado</option>
-                    <option value="{{ i }}" *ngFor="let equipamento of equipamentos; let i = index">{{ equipamento }}</option>
+                    <option *ngFor="let p of listaEquipamento" value="{{p}}">{{p.nome}}</option>
                 </select>
 
             </div>
 
             <div class="inputs">
                 <label>Data</label>
-                <input name="data" type="date" minlength="11" id="data" pInputText [(ngModel)]="data" required autocomplete="bday-day" disabled>
+                <input name="data" type="date" minlength="11" id="data" pInputText [(ngModel)]="obj.dataEmissao" required autocomplete="bday-day" disabled>
             </div>
 
             <div class="inputs">
                 <label for="sala">Local</label>
-                <select name="" id="sala" required>
+                <select name="" id="sala" on-change="atribuirLocal(a.value)" #a required>
                     <option value="">Selecione em qual sala deve ser executado</option>
-                    <option value="{{ i }}" *ngFor="let sala of local; let i = index">{{ sala }}</option>
+                    <option *ngFor="let p of listaLocal" value="{{p}}">{{p.nome}}</option>
                 </select>
 
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <textarea name="descricao" type="text" minlength="30" maxlength="250" pInputText id="descricao" [(ngModel)]="descricao" autocomplete="new-password"></textarea>
+                    <textarea name="descricao" type="text" minlength="30" maxlength="250" pInputText id="obj.descricao" [(ngModel)]="descricao" autocomplete="new-password"></textarea>
                     <label for="descricao">Digite em breves palavras o problema a ser resolvido</label>
                 </span>
             </div>
-            <button pButton pRipple type="button" label="Cadastrar" class="p-button-raised "></button>
+            <button pButton pRipple type="button" label="Cadastrar" (click)="adicionar()" class="p-button-raised "></button>
         </div>
     </form>
 </div>

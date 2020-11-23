@@ -4,42 +4,21 @@
     <thead class="cabeçalho">
       <tr>
         <th scope="col">Código</th>
-        <th scope="col">Data Solic</th>
+        <th scope="col">Código O.S.</th>
+        <th scope="col">Data</th>
         <th scope="col">Status</th>
-        <th scope="col">Data status</th>
         <th scope="col">Funcionario</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td scope="row">001</td>
-        <td>01/10/2020</td>
-        <td>Aberto</td>
-        <td>01/10/2020</td>
-        <td>Bruno</td>
+      <tr *ngFor="let p of lista">
+        <td scope="row">{{p.id}}</td>
+        <td>{{p.ordemServico.id}}</td>
+        <td>{{p.data}}</td>
+        <td>{{p.status}}</td>
+        <td>{{p.funcionario.nome}}</td>
+
       </tr>
-      <tr>
-        <td scope="row">002</td>
-        <td>01/10/2020</td>
-        <td>Analisando</td>
-        <td>02/10/2020</td>
-        <td>Bruno</td>
-      </tr>
-      <tr>
-        <td scope="row">003</td>
-        <td>01/10/2020</td>
-        <td>Finalizado</td>
-        <td>03/10/2020</td>
-        <td>Bruno</td>
-      </tr>
-      <tr>
-        <td scope="row">004</td>
-        <td>01/10/2020</td> 
-        <td>Em espera</td>
-        <td>03/10/2020</td>
-        <td>Bruno</td>
-      </tr>
-      
     </tbody>
   </table>
 </div>

@@ -8,37 +8,43 @@
               <h1 class="login-title">Bem vindo</h1>
               <form class="was-validated" name="cadastroCliente">
                 <span class="p-float-label">
-                  <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="nome" autocomplete="name" required> 
+                  <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="obj.nome" autocomplete="name" required> 
                   <label for="nome">Nome Completo</label>
               </span>
               <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="cpf_cnpj" mask="000.000.000-00" required>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="obj.cpfcnpj" mask="000.000.000-00" required>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>
                 <div class="inputs">
                   <span class="p-float-label">
-                      <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="email" required autocomplete="email"> 
+                      <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="obj.email" required autocomplete="email"> 
                       <label for="email">Digite o E-mail</label>
                   </span>
               </div>
               <div class="inputs">
                 <span class="p-float-label">
-                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="telefone" mask="(00) 0 0000-0000">
+                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="obj.telefone" mask="(00) 0 0000-0000">
                     <label for="telefone">Telefone</label>
                 </span> 
             </div>
             <div class="inputs">
               <span class="p-float-label">
-                  <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="usuario" required autocomplete="username"> 
+                  <input name="funcao" type="text" minlength="3" id="funcao" pInputText [(ngModel)]="obj.funcao" autocomplete="name" required> 
+                  <label for="funcao">Perfil</label>
+              </span>
+            </div>
+            <div class="inputs">
+              <span class="p-float-label">
+                  <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="obj.login" required autocomplete="username"> 
                   <label for="user">Digite o usuário</label>
               </span>
           </div>
 
           <div class="inputs">
             <span class="p-float-label">
-                <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="password" autocomplete="new-password"/>
+                <input name="password" type="password" minlength="4" maxlength="16" pPassword id="obj.senha" [(ngModel)]="password" autocomplete="new-password"/>
                 <label for="password">Digite a senha</label>
             </span>
         </div>
@@ -49,7 +55,13 @@
                 <label for="confirmPassword">Digite novamente a senha</label>
             </span>
         </div>
-        <button pButton pRipple type="button" id="cadastro" label="Cadastro" class="p-button-rounded button-cadastro" ></button>
+        <div class="inputs">
+            <span class="p-float-label">
+                <input name="perfil" type="text" minlength="3" id="perfil" pInputText [(ngModel)]="obj.perfil" autocomplete="name" required> 
+                <label for="perfil">Perfil</label>
+            </span>
+        </div>
+        <button pButton pRipple type="button" id="cadastro" label="Cadastro" (click)="adicionar()" class="p-button-rounded button-cadastro" ></button>
         <button pButton pRipple type="button" id="login" label="Login" class="p-button-rounded button-login" ></button>
               </form>
             </div>

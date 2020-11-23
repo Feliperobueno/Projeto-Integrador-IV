@@ -49,6 +49,12 @@ public class PessoaResource {
 		return pessoaRepository.findById(id);
 	}
 	
+	@GetMapping("/{perfil}")
+	public Optional<Pessoa> findByPerfil(@PathVariable String perfil){
+		
+		return pessoaRepository.findByPerfil(perfil);
+	}
+	
 	@PostMapping
 	public ResponseEntity<Pessoa> create(@Valid @RequestBody Pessoa pessoa,
 			HttpServletResponse response){

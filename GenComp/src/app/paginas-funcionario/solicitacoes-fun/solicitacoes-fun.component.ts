@@ -1,3 +1,6 @@
+import { EquipamentoService } from './../../services/equipamento.service';
+import { TipoServicoService } from './../../services/tipo-servico.service';
+import { PessoaService } from 'src/app/services/pessoa.service';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
@@ -15,7 +18,7 @@ export class SolicitacoesFunComponent implements OnInit {
   equipamento: string[] = ['Computador', 'projetor', 'Swhitch', 'Servidor'];
 
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  constructor(private modalService: BsModalService, private api:PessoaService, private api2: TipoServicoService, private api3: EquipamentoService) {}
  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

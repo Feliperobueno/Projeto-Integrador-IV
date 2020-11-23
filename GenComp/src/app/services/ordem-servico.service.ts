@@ -1,3 +1,4 @@
+import { Historico } from './../models/historico.model';
 import { OrdemServico } from './../models/ordem-servico.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -40,4 +41,6 @@ export class OrdemServicoService {
     const urlLocal = `${url}/${id}`;
     return this.http.delete<OrdemServico>(urlLocal, httpOptions);
   }
+
+  
 }

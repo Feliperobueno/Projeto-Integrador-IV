@@ -1,3 +1,4 @@
+import { Equipamento } from './equipamento.model';
 import { LaboratorioSala } from './laboratorio-sala.model';
 import { Pessoa } from './pessoa.model';
 import { TipoServico } from './tipo-servico.model';
@@ -11,4 +12,5 @@ export class OrdemServico {
     status: string;
     descricao: string;
     laboratorioSala: LaboratorioSala;
+    equipamento: Equipamento;
 }

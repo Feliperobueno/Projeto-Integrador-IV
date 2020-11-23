@@ -9,5 +9,7 @@ import com.GenCompBackend.model.Pessoa;
 public interface PessoaRepository extends JpaRepository<Pessoa,Long> {
 	
 	Optional<Pessoa> findByLogin(String login);
+	
+	Optional<Pessoa> findByPerfil(String perfil);
 
 }

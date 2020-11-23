@@ -2,60 +2,27 @@
 <h1>Historico de solicitações</h1>
 <table class="table table-hover" >
     <thead class="cabeçalho">
-      <tr>
-        <th scope="col">Código</th>
-        <th scope="col">Data Solic</th>
-        <th scope="col">Data ultimo status</th>
-        <th scope="col">Cliente</th>
-        <th scope="col">Tipo serviço</th>
-        <th scope="col">Status</th>
+      
+        <tr>
+          <th scope="col">Código</th>
+          <th scope="col">Código O.S.</th>
+          <th scope="col">Data</th>
+          <th scope="col">Status</th>
+          <th scope="col">Funcionario</th>
+        </tr>
 
-      </tr>
+        <tr></tr>
     </thead>
     <tbody>
-      <tr>
-        <td scope="row">001</td>
-        <td>01/10/2020</td>
-        <td>01/10/2020</td>
-        <td>Felipe</td>
-        <td>Arrumar computador</td>
+      <tr *ngFor="let p of lista">
+        <td scope="row">{{p.id}}</td>
+        <td>{{p.ordemServico.id}}</td>
+        <td>{{p.data}}</td>
         <td>
           <select name="" id="">
-            <option *ngFor="let status of OptionStatus">{{ status }}</option>
+            <option *ngFor="let status of OptionStatus">{{ p.status }}</option>
           </select></td>
-      </tr>
-      <tr>
-        <td scope="row">002</td>
-        <td>01/10/2020</td>
-        <td>02/10/2020</td>
-        <td>Felipe</td>
-        <td>Arrumar computador</td>
-        <td>
-          <select name="" id="">
-            <option *ngFor="let status of OptionStatus">{{ status }}</option>
-          </select></td>
-      </tr>
-      <tr>
-        <td scope="row">003</td>
-        <td>01/10/2020</td>
-        <td>03/10/2020</td>
-        <td>Felipe</td>
-        <td>Arrumar computador</td>
-        <td>
-          <select name="" id="">
-            <option *ngFor="let status of OptionStatus">{{ status }}</option>
-          </select></td>
-      </tr>
-      <tr>
-        <td scope="row">004</td>
-        <td>01/10/2020</td>
-        <td>03/10/2020</td>
-        <td>Felipe</td>
-        <td>Arrumar computador</td>
-        <td>
-          <select name="" id="">
-            <option *ngFor="let status of OptionStatus">{{ status }}</option>
-          </select></td>
+        <td>{{p.funcionario.nome}}</td>
       </tr>
       
     </tbody>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Pessoa } from 'src/app/models/pessoa.model';
+import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -25,6 +27,78 @@ export class CadastroComponent implements OnInit {
 
   erroSenhaDiferente;
 
+  
+  lista: Pessoa[] = [];
+  listaPerfil: Pessoa[] = [];
+  obj: Pessoa = new Pessoa();
+  perfil: string;
+  mens = '';
+
+
+  
+  constructor(private router: Router, private api: PessoaService) { }
+
+  ngOnInit(): void {
+    this.consultar();
+  }
+
+  consultar(){
+    this.api.consultar()
+    .toPromise()
+    .then
+    (res =>{
+      this.lista = res;
+    });
+  }
+
+  consultarPorPerfil(){
+    this.api.consultarPorPerfil(this.perfil)
+    .toPromise()
+    .then
+    (res =>{
+      this.listaPerfil = res;
+    });
+  }
+
+  adicionar(){
+    this.api.adicionar(this.obj)
+    .toPromise()
+    .then(pessoa => {
+      this.mens = pessoa.nome + " foi adicionado(a) com sucesso!";
+      this.consultar();
+    });
+  }
+
+  excluir(){
+    this.api.excluir(this.obj.id)
+    .toPromise()
+    .then(pessoa => {
+      this.mens = "Pessoa excluida com sucesso!";
+      this.consultar();
+    });
+  }
+
+  alterar(){
+    this.api.alterar(this.obj.id,this.obj)
+    .toPromise()
+    .then(pessoa => {
+      this.mens = pessoa.nome + " alterado(a) com sucesso!";
+      this.consultar();
+    })
+  }
+
+  carregarDados(p: Pessoa){
+    this.obj = p;
+
+  }
+
+  limparCampos(){
+
+    this.obj = new Pessoa;
+
+  }
+
+
   cadastroSuccess() {
     this.router.navigate(['/contrato']);
   }
@@ -47,9 +121,5 @@ export class CadastroComponent implements OnInit {
     console.log(this.erroSenhaDiferente);
    }
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-  }
 
 }

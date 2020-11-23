@@ -25,6 +25,11 @@ export class PessoaService {
     return this.http.get<Pessoa>(urlLocal);
   }
 
+  consultarPorPerfil(perfil: string): Observable<Pessoa[]>{
+    const urlLocal = `${url}/${perfil}`;
+    return this.http.get<Pessoa[]>(urlLocal);
+  }
+
   adicionar(Pessoa): Observable<Pessoa>{
     return this.http.post<Pessoa>(url, Pessoa, httpOptions);
   }
