@@ -4,33 +4,33 @@
         <form name="cadastroFun" >
             <div class="cadastro">
                 <span class="p-float-label">
-                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="nome" autocomplete="name" required> 
+                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="obj.nome" autocomplete="name" required> 
                     <label for="nome">Digite o nome completo do funcionário</label>
                 </span>
             </div>
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" type="text" pInputText [(ngModel)]="cpf_cnpj" mask="000.000.000-00 || 00.000.000/0000-00" required>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" type="text" pInputText [(ngModel)]="obj.cpfcnpj" mask="000.000.000-00 || 00.000.000/0000-00" required>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="email" required autocomplete="email"> 
+                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="obj.email" required autocomplete="email"> 
                     <label for="email">Digite o E-mail</label>
                 </span>
             </div>
             <div class="inputs">
                 <span class="p-float-label">
-                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000" autocomplete="tel">
+                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="obj.telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000" autocomplete="tel">
                     <label for="telefone">Telefone</label>
                 </span> 
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="usuario" required autocomplete="username"> 
+                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="obj.login" required autocomplete="username"> 
                     <label for="user">Digite o usuário</label>
                 </span>
             </div>
@@ -44,7 +44,7 @@
             </div>
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="password" autocomplete="new-password"/>
+                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="obj.senha" autocomplete="new-password"/>
                     <label for="password">Digite a senha</label>
                 </span>
             </div>
@@ -56,7 +56,7 @@
                 </span>
             </div>
 
-            <button pButton pRipple type="button" label="Cadastrar" class="p-button-rounded "[disabled]="password != confirmPassword"></button>
+            <button pButton pRipple type="button" label="Cadastrar" (click)="adicionar()" class="p-button-rounded "[disabled]="password != confirmPassword"></button>
         </form>
     </div>
 </div>
