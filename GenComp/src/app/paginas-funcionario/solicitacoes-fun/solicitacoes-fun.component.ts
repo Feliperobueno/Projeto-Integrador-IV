@@ -8,6 +8,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Pessoa } from 'src/app/models/pessoa.model';
 import { TipoServico } from 'src/app/models/tipo-servico.model';
 import { Historico } from 'src/app/models/historico.model';
+import { HistoricoService } from 'src/app/services/historico.service';
 
 @Component({
   selector: 'app-solicitacoes-fun',
@@ -35,7 +36,7 @@ export class SolicitacoesFunComponent implements OnInit {
   status="Aberto";
 
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService, private api:OrdemServicoService, private api2: TipoServicoService, private api3: PessoaService, private api4: Historico) {}
+  constructor(private modalService: BsModalService, private api:OrdemServicoService, private api2: TipoServicoService, private api3: PessoaService, private api4: HistoricoService) {}
  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

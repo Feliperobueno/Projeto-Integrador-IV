@@ -1,6 +1,7 @@
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { OrdemServicoService } from './../../services/ordem-servico.service';
 import { OrdemServico } from './../../models/ordem-servico.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Historico } from 'src/app/models/historico.model';
 import { HistoricoService } from 'src/app/services/historico.service';
 
@@ -20,8 +21,9 @@ export class HistoricoFunComponent implements OnInit {
   opcaoSel: number;
   idFunc: number;
   listaFuncionario: OrdemServico[] = [];
+  modalRef: BsModalRef;
 
-  constructor(private api:HistoricoService, private api2: OrdemServicoService) { }
+  constructor(private api2: OrdemServicoService, private modalService: BsModalService) { }
 
   ngOnInit(): void {
     this.consultar();
@@ -98,6 +100,10 @@ export class HistoricoFunComponent implements OnInit {
   atualizar(){
     this.alterar();
     this.adicionarHistorico();
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
   
 

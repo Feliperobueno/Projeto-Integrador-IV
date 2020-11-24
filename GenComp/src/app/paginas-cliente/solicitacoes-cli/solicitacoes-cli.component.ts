@@ -59,6 +59,7 @@ export class SolicitacoesCliComponent implements OnInit {
     this.obj.tipoServico = this.objServicoSel;
     this.obj.laboratorioSala = this.objLocalSel;
     this.obj.equipamento = this.objEquipamentoSel;
+    this.obj.cliente.id = 1;
     this.api.adicionar(this.obj)
     .toPromise()
     .then(ordemServico => {

@@ -4,11 +4,14 @@
     <thead class="cabeçalho">
       
         <tr>
-          <th scope="col">Código</th>
           <th scope="col">Código O.S.</th>
+          <th scope="col">Nome do Cliente</th>
+          <th scope="col">Serviço</th>
+          <th scope="col">Sala/Laboratório</th>
+          <th scope="col">Equipamento</th>
           <th scope="col">Data</th>
           <th scope="col">Status</th>
-          <th scope="col">Funcionario</th>
+          <th scope="col">Ações</th>
         </tr>
 
         
@@ -16,15 +19,21 @@
     <tbody>
       <tr *ngFor="let p of listaOs">
         <td scope="row">{{p.id}}</td>
+        <td>{{p.cliente.nome}}</td>
+        <td>{{p.tipoServico.descricao}}</td>
+        <td>{{p.laboratorioSala.nome}}</td>
+        <td>{{p.equipamento.nome}}</td>
         <td>{{p.dataEmissao}}</td>
-        <td>p.cliente.nome</td>
-        <td>p.descricao</td>
-        <td>p.status</td>
+        <td>{{p.status}}</td>
+        <td>
+          <button pButton pRipple type="button" icon="pi pi-calendar-plus" (click)="openModal(Os)" class="p-button-rounded p-button-success"></button>
+          <button pButton pRipple type="button" icon="pi pi-search" (click)="openModal(historico)" class="p-button-rounded p-button-success"></button>
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
-<ng-template #historico>
+<ng-template #Os>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Alterar Status</h4>
     <button class="close pull-right" arial-label="Close" (click)="modalRef.hide()"></button>
@@ -37,6 +46,40 @@
       <option value="{{i}}" *ngIf="let status of OptionStatus; let i of index " ></option>
     </select>
 
+  </div>
+  <button pButton pRipple class="p-button-rounded" label="Salvar"></button>
+</ng-template>
+
+<ng-template #historico>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Historico</h4>
+    <button class="close pull-right" arial-label="Close" (click)="modalRef.hide()"></button>
+    
+  </div>
+  <div class="modal-body">
+    <table class="table table-hover" >
+      <thead class="cabeçalho">
+        
+          <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Código O.S.</th>
+            <th scope="col">Data</th>
+            <th scope="col">Status</th>
+            <th scope="col">Funcionario</th>
+          </tr>
+  
+          
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of listaOs">
+          <td scope="row">{{p.id}}</td>
+          <td>{{p.dataEmissao}}</td>
+          <td>p.cliente.nome</td>
+          <td>p.descricao</td>
+          <td>p.status</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <button pButton pRipple class="p-button-rounded" label="Salvar" ></button>
 </ng-template>

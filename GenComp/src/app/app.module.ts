@@ -1,3 +1,4 @@
+import { LoginService } from './services/login.service';
 import { PessoaService } from './services/pessoa.service';
 import { OrdemServicoService } from './services/ordem-servico.service';
 import { HistoricoService } from './services/historico.service';
@@ -90,7 +91,9 @@ import { TipoServicoService } from './services/tipo-servico.service';
     HistoricoService,
     OrdemServicoService,
     PessoaService,
-    TipoServicoService
+    TipoServicoService,
+    LoginService
+    
 
   ],
   bootstrap: [AppComponent]

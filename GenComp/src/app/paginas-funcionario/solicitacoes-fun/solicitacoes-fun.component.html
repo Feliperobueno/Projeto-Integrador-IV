@@ -14,10 +14,10 @@
         <tbody>
           <tr *ngFor="let p of listaOs">
             <td scope="row">{{p.id}}</td>
-            <td>{{p.dataEmissao}}</td>
-            <td>p.cliente.nome</td>
-            <td>p.descricao</td>
-            <td>p.status</td>
+            <td>{{ p.dataEmissao}}</td>
+            <td>{{p.cliente.nome}}</td>
+            <td>{{p.descricao}}</td>
+            <td>{{p.status}}</td>
             <td>
               <button pButton pRipple type="button" label="Aceitar" (click)="openModal(template)" class="p-button-rounded"></button>
 

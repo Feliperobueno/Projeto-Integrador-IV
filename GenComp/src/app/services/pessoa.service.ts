@@ -5,6 +5,8 @@ import { Pessoa } from "../models/pessoa.model"
 
 const url = "http://localhost:8082/pessoa";
 
+const url2 = "http://localhost:8082/pessoa/perfil";
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -26,7 +28,7 @@ export class PessoaService {
   }
 
   consultarPorPerfil(perfil: string): Observable<Pessoa[]>{
-    const urlLocal = `${url}/${perfil}`;
+    const urlLocal = `${url2}/${perfil}`;
     return this.http.get<Pessoa[]>(urlLocal);
   }
 
