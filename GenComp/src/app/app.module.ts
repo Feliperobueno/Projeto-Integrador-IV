@@ -1,3 +1,8 @@
+import { PessoaService } from './services/pessoa.service';
+import { OrdemServicoService } from './services/ordem-servico.service';
+import { HistoricoService } from './services/historico.service';
+import { HttpClientModule } from '@angular/common/http';
+import { LaboratorioSalaService } from './services/laboratorio-sala.service';
 import { SolicitacoesCliComponent } from './paginas-cliente/solicitacoes-cli/solicitacoes-cli.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -34,6 +39,8 @@ import {PasswordModule} from 'primeng/password';
 import {TableModule} from 'primeng/table';
 import {ToggleButtonModule} from 'primeng/togglebutton';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { EquipamentoService } from './services/equipamento.service';
+import { TipoServicoService } from './services/tipo-servico.service';
 
 
 @NgModule({
@@ -73,10 +80,19 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     PasswordModule,
     TableModule,
     ToggleButtonModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    HttpClientModule
   ],
 
-  providers: [],
+  providers: [
+    LaboratorioSalaService,
+    EquipamentoService,
+    HistoricoService,
+    OrdemServicoService,
+    PessoaService,
+    TipoServicoService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

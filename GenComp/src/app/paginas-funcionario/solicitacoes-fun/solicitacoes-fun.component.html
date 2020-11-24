@@ -49,6 +49,6 @@
           <option *ngFor="let p of listaServico" value="{{p}}">{{p.descricao}}</option>
         </select>
 
-        <button pButton pRipple type="button" label="Salvar" class="p-button-rounded"(click)="modalRef.hide()"></button>
+        <button pButton pRipple type="button" label="Salvar" (click) = "atualizarHitorico()" class="p-button-rounded"(click)="modalRef.hide()"></button>
       </div>
     </ng-template>

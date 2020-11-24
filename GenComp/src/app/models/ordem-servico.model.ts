@@ -7,7 +7,7 @@ export class OrdemServico {
     funcionario: Pessoa;
     cliente: Pessoa;
     tipoServico: TipoServico;
-    dataEmissao: Date;
+    dataEmissao: Date = new Date();
     dataFechamento: Date;
     status: string;
     descricao: string;

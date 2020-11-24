@@ -11,20 +11,33 @@
           <th scope="col">Funcionario</th>
         </tr>
 
-        <tr></tr>
+        
     </thead>
     <tbody>
-      <tr *ngFor="let p of lista">
+      <tr *ngFor="let p of listaOs">
         <td scope="row">{{p.id}}</td>
-        <td>{{p.ordemServico.id}}</td>
-        <td>{{p.data}}</td>
-        <td>
-          <select name="" id="">
-            <option *ngFor="let status of OptionStatus">{{ status }}</option>
-          </select></td>
-        <td>{{p.funcionario.nome}}</td>
+        <td>{{p.dataEmissao}}</td>
+        <td>p.cliente.nome</td>
+        <td>p.descricao</td>
+        <td>p.status</td>
       </tr>
-      
     </tbody>
   </table>
 </div>
+<ng-template #historico>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Alterar Status</h4>
+    <button class="close pull-right" arial-label="Close" (click)="modalRef.hide()"></button>
+    
+  </div>
+  <div class="modal-body">
+    <label for="Status">Selecione o novo status</label>
+    <select name="status" id="status" #status>
+      <option value="">Selecione o novo status</option>
+      <option value="{{i}}" *ngIf="let status of OptionStatus; let i of index " ></option>
+    </select>
+
+  </div>
+  <button pButton pRipple class="p-button-rounded" label="Salvar" ></button>
+</ng-template>
+

@@ -7,6 +7,12 @@ import { Observable } from 'rxjs';
 
 const url = "http://localhost:8082/ordemServico";
 
+const url2 = "http://localhost:8082/ordemServico/funcionario";
+
+const url3 = "http://localhost:8082/ordemServico/cliente";
+
+
+
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -25,6 +31,16 @@ export class OrdemServicoService {
 
   consultarPorId(id: number): Observable<OrdemServico>{
     const urlLocal = `${url}/${id}`;
+    return this.http.get<OrdemServico>(urlLocal);
+  }
+
+  consultarOsPorFunc(id: number): Observable<OrdemServico[]>{
+    const urlLocal = `${url2}/${id}`;
+    return this.http.get<OrdemServico[]>(urlLocal);
+  }
+
+  consultarOsPorCli(id: number): Observable<OrdemServico>{
+    const urlLocal = `${url3}/${id}`;
     return this.http.get<OrdemServico>(urlLocal);
   }
 

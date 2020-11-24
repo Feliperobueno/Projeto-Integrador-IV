@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.GenCompBackend.model.OrdemServico;
+import com.GenCompBackend.model.Pessoa;
 import com.GenCompBackend.repository.OrdemServicoRepository;
 
 
@@ -46,6 +47,22 @@ public class OrdemServicoResource {
 	public Optional<OrdemServico> findById(@PathVariable Long id){
 		
 		return ordemServicoRepository.findById(id);
+	}
+	
+	@GetMapping("/funcionario/{id}")
+	public List<OrdemServico> findByFuncionario(@PathVariable Long id){
+		
+		Pessoa funcionario = new Pessoa();
+		funcionario.setId(id);
+		return ordemServicoRepository.findByFuncionario(funcionario);
+	}
+	
+	@GetMapping("/cliente/{id}")
+	public List<OrdemServico> findByCliente(@PathVariable Long id){
+		
+		Pessoa cliente = new Pessoa();
+		cliente.setId(id);
+		return ordemServicoRepository.findByCliente(cliente);
 	}
 	
 	@PostMapping

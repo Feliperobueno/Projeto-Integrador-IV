@@ -32,6 +32,7 @@ export class SolicitacoesFunComponent implements OnInit {
   objFuncionarioSel: Pessoa = new Pessoa();
   listaServico: TipoServico[] = [];
   now = new Date;
+  status="Aberto";
 
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService, private api:OrdemServicoService, private api2: TipoServicoService, private api3: PessoaService, private api4: Historico) {}
@@ -75,6 +76,8 @@ export class SolicitacoesFunComponent implements OnInit {
 
   alterar(){
     this.obj.tipoServico = this.objServicoSel;
+    this.obj.funcionario = this.objFuncionarioSel;
+
     this.api.alterar(this.obj.id,this.obj)
     .toPromise()
     .then(ordemServico => {
@@ -113,11 +116,18 @@ export class SolicitacoesFunComponent implements OnInit {
     });
   }
 
+
+atualizarOsHistorico() {
+  this.alterar()
+  this.adicionarHistorico()
+}
+
   adicionarHistorico(){
 
     this.objHistorico.ordemServico = this.obj;
     this.objHistorico.funcionario = this.objFuncionarioSel;
     this.objHistorico.data = this.now;
+    this.objHistorico.status = status;
     
 
     this.api.adicionar(this.objHistorico)

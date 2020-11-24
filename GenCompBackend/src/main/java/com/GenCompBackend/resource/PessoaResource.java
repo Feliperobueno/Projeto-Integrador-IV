@@ -50,9 +50,9 @@ public class PessoaResource {
 	}
 	
 	@GetMapping("/{perfil}")
-	public Optional<Pessoa> findByPerfil(@PathVariable String perfil){
+	public List<Pessoa> listUsuariosPorPerfil(@PathVariable String perfil){
 		
-		return pessoaRepository.findByPerfil(perfil);
+		return pessoaRepository.listUsuariosPorPerfil(perfil);
 	}
 	
 	@PostMapping
