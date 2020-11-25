@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { Pessoa } from 'src/app/models/pessoa.model';
 import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({
   selector: 'app-perfil-cli',
   templateUrl: './perfil-cli.component.html',
-  styleUrls: ['./perfil-cli.component.scss']
+  styleUrls: ['./perfil-cli.component.scss'],
+  providers: [MessageService]
 })
 export class PerfilCliComponent implements OnInit {
   
@@ -29,7 +31,7 @@ export class PerfilCliComponent implements OnInit {
   objPessoaSel: Pessoa = new Pessoa();
   mens = '';
 
-  constructor(private api: PessoaService) { }
+  constructor(private api: PessoaService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.consultar();
@@ -78,7 +80,8 @@ export class PerfilCliComponent implements OnInit {
     .then(pessoa => {
       this.mens = pessoa.nome + " alterado(a) com sucesso!";
       this.consultar();
-    })
+    });
+    this.messageService.add({severity:'info', summary: 'Success', detail: 'Alterado com sucesso'});
   }
 
   carregarDados(p: Pessoa){

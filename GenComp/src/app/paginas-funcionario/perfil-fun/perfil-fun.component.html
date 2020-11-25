@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container p-fluid">
     <h1>Perfil</h1>
     <div>
         <form name="cadastroFun" class="was-validated">
@@ -11,7 +11,7 @@
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="objPessoaSel.cpfCnpj" mask="000.000.000-00 || 00.000.000/0000-00" disabled>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" maxlength="18" pInputText [(ngModel)]="objPessoaSel.cpfCnpj" mask="000.000.000-00 || 00.000.000/0000-00" disabled>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>

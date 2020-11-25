@@ -6,11 +6,13 @@ import { Historico } from 'src/app/models/historico.model';
 import { HistoricoService } from 'src/app/services/historico.service';
 import { PessoaService } from 'src/app/services/pessoa.service';
 import { TipoServicoService } from 'src/app/services/tipo-servico.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-historico-fun',
   templateUrl: './historico-fun.component.html',
-  styleUrls: ['./historico-fun.component.scss']
+  styleUrls: ['./historico-fun.component.scss'],
+  providers: [MessageService]
 })
 export class HistoricoFunComponent implements OnInit {
 
@@ -25,7 +27,7 @@ export class HistoricoFunComponent implements OnInit {
   listaFuncionario: OrdemServico[] = [];
   modalRef: BsModalRef;
 
-  constructor(private api2: OrdemServicoService, private ap1: PessoaService, private api3: TipoServicoService,private modalService: BsModalService) { }
+  constructor(private api2: OrdemServicoService, private ap1: PessoaService, private api3: TipoServicoService,private modalService: BsModalService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.consultar();
@@ -58,6 +60,7 @@ export class HistoricoFunComponent implements OnInit {
       this.mens = "A registro id " + ordemServico.id + " foi adicionado(a) com sucesso!";
       this.consultar();
     });
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Cadastrado com sucesso'});
   }
 
   excluir(){
@@ -67,6 +70,7 @@ export class HistoricoFunComponent implements OnInit {
       this.mens = "O registro foi excluida com sucesso!";
       this.consultar();
     });
+    this.messageService.add({severity:'error', summary: 'Success', detail: 'Excluido com sucesso'});
   }
 
   alterar(){
@@ -81,7 +85,9 @@ export class HistoricoFunComponent implements OnInit {
     .then(ordemServico => {
       this.mens = "A O.S id " + ordemServico.id + + " alterado(a) com sucesso!";
       this.consultar();
-    })
+    });
+    this.messageService.add({severity:'info', summary: 'Success', detail: 'Alterado com sucesso'});
+    this.modalRef.hide();
   }
 
   adicionarHistorico(){

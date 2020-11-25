@@ -9,12 +9,14 @@ import { TipoServicoService } from 'src/app/services/tipo-servico.service';
 import { EquipamentoService } from 'src/app/services/equipamento.service';
 import { PessoaService } from 'src/app/services/pessoa.service';
 import { Pessoa } from 'src/app/models/pessoa.model';
+import { MessageService } from 'primeng/api';
 
 
 @Component({
   selector: 'app-solicitacoes-cli',
   templateUrl: './solicitacoes-cli.component.html',
-  styleUrls: ['./solicitacoes-cli.component.scss']
+  styleUrls: ['./solicitacoes-cli.component.scss'],
+  providers: [MessageService]
 })
 export class SolicitacoesCliComponent implements OnInit {
 
@@ -41,7 +43,7 @@ export class SolicitacoesCliComponent implements OnInit {
   objPessoaSel: Pessoa = new Pessoa();
   mens = '';
 
-  constructor(private api:OrdemServicoService, private api2:TipoServicoService, private api3:EquipamentoService, private api4:LaboratorioSalaService, private api5:PessoaService) { }
+  constructor(private api:OrdemServicoService, private api2:TipoServicoService, private api3:EquipamentoService, private api4:LaboratorioSalaService, private api5:PessoaService, private messageService: MessageService) { }
 
   ngOnInit(): void {
      this.consultar();
@@ -76,6 +78,7 @@ export class SolicitacoesCliComponent implements OnInit {
       this.mens = "A O.S id " + ordemServico.id + " foi adicionado(a) com sucesso!";
       this.consultar();
     });
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Cadastrado com sucesso'});
   }
 
   excluir(){

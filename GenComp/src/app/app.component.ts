@@ -16,7 +16,16 @@ export class AppComponent {
               && this.router.url !== '/'
               && this.router.url !== '/cadastro'
               && this.router.url !== '/contrato'
-              && this.router.url !== '/menu-cli';
+              && this.router.url !== '/menu-cli'
+              && this.router.url !== '/menu-fun'
+              && this.router.url !== '/home-fun'
+              && this.router.url !== '/historico-fun'
+              && this.router.url !== '/solicitacoes-fun'
+              && this.router.url !== '/perfil-fun'
+              && this.router.url !== '/cadastro-sala'
+              && this.router.url !== '/cadastro-equipamento'
+              && this.router.url !== '/cadastro-servico'
+              && this.router.url !== '/cadastro-funcionario'
 
   }
   exibindoMenuFun() {
@@ -25,7 +34,12 @@ export class AppComponent {
               && this.router.url !== '/' 
               && this.router.url !== '/cadastro'
               && this.router.url !== '/contrato'
-              && this.router.url !== '/menu-fun';
+              && this.router.url !== '/menu-fun'
+              && this.router.url !== '/menu-cli'
+              && this.router.url !== '/historico-cli'
+              && this.router.url !== '/home-cli'
+              && this.router.url !== '/solicitacoes-cli'
+              && this.router.url !== '/perfil-cli'
 
   }
 }

@@ -27,6 +27,7 @@ select{
 h1{
     color:  hsla(210, 100%, 45%, 1);
     text-align: center;
+    padding-top: 5%;
 }
 
 input{
@@ -42,4 +43,9 @@ input{
     &:disabled{
         background-color: #cecbcb;
     }
+}
+
+.container{
+    margin-left: 25%;
+    padding-right: 180px;
 }

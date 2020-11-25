@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 import { Pessoa } from 'src/app/models/pessoa.model';
 import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  styleUrls: ['./cadastro.component.scss'],
+  providers: [MessageService]
 })
 export class CadastroComponent implements OnInit {
 
@@ -34,9 +36,8 @@ export class CadastroComponent implements OnInit {
   perfil: string;
   mens = '';
 
-
-  
-  constructor(private router: Router, private api: PessoaService) { }
+ 
+  constructor(private router: Router, private api: PessoaService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.consultar();
@@ -67,6 +68,9 @@ export class CadastroComponent implements OnInit {
       this.mens = pessoa.nome + " foi adicionado(a) com sucesso!";
       this.consultar();
     });
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Cadastrado com sucesso'});
+    this.login();
+
   }
 
   excluir(){

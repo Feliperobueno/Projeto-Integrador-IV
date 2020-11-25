@@ -1,4 +1,4 @@
-
+<p-toast></p-toast>
 <body>
     <main>
       <div class="p-grid p-fluid">
@@ -13,7 +13,7 @@
               </span>
               <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="obj.cpfCnpj" mask="000.000.000-00" required>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" maxlength="18" pInputText [(ngModel)]="obj.cpfCnpj" mask="000.000.000-00 || 00.000.000/0000-00" required>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>

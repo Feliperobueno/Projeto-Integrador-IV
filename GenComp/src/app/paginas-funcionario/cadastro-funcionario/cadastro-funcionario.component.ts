@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { Pessoa } from 'src/app/models/pessoa.model';
 import { PessoaService } from 'src/app/services/pessoa.service';
 
 @Component({
   selector: 'app-cadastro-funcionario',
   templateUrl: './cadastro-funcionario.component.html',
-  styleUrls: ['./cadastro-funcionario.component.scss']
+  styleUrls: ['./cadastro-funcionario.component.scss'],
+  providers: [MessageService]
 })
 export class CadastroFuncionarioComponent implements OnInit {
 
@@ -35,7 +37,7 @@ export class CadastroFuncionarioComponent implements OnInit {
   obj: Pessoa = new Pessoa();
   mens = '';
 
-  constructor(private api: PessoaService) { }
+  constructor(private api: PessoaService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.consultar();
@@ -60,6 +62,7 @@ export class CadastroFuncionarioComponent implements OnInit {
       this.mens = pessoa.nome + " foi adicionado(a) com sucesso!";
       this.consultar();
     });
+    this.messageService.add({severity:'success', summary: 'Success', detail: 'Cadastrado com sucesso'});
   }
 
   excluir(){

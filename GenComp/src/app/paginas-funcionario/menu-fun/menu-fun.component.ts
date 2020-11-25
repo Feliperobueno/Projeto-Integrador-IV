@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-fun',
@@ -12,7 +13,12 @@ export class MenuFunComponent implements OnInit {
   titulo = 'GenComp';
 
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  sair(){
+    this.router.navigate(['/login'])
+  }
+
 
   ngOnInit(): void {
   }

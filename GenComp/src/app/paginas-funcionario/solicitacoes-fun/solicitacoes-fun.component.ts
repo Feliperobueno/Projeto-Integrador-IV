@@ -9,11 +9,13 @@ import { Pessoa } from 'src/app/models/pessoa.model';
 import { TipoServico } from 'src/app/models/tipo-servico.model';
 import { Historico } from 'src/app/models/historico.model';
 import { HistoricoService } from 'src/app/services/historico.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-solicitacoes-fun',
   templateUrl: './solicitacoes-fun.component.html',
-  styleUrls: ['./solicitacoes-fun.component.scss']
+  styleUrls: ['./solicitacoes-fun.component.scss'],
+  providers: [MessageService]
 })
 export class SolicitacoesFunComponent implements OnInit {
 
@@ -36,7 +38,7 @@ export class SolicitacoesFunComponent implements OnInit {
   status="Aberto";
 
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService, private api:OrdemServicoService, private api2: TipoServicoService, private api3: PessoaService, private api4: HistoricoService) {}
+  constructor(private modalService: BsModalService, private api:OrdemServicoService, private api2: TipoServicoService, private api3: PessoaService, private api4: HistoricoService, private messageService: MessageService) {}
  
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
@@ -121,6 +123,7 @@ export class SolicitacoesFunComponent implements OnInit {
 atualizarOsHistorico() {
   this.alterar()
   this.adicionarHistorico()
+  this.messageService.add({severity:'success', summary: 'Success', detail: 'Aceito com sucesso'});
 }
 
   adicionarHistorico(){
