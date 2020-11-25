@@ -26,7 +26,7 @@
         <td>{{p.dataEmissao}}</td>
         <td>{{p.status}}</td>
         <td>
-          <button pButton pRipple type="button" icon="pi pi-calendar-plus" (click)="openModal(Os)" class="p-button-rounded p-button-success"></button>
+          <button pButton pRipple type="button" icon="pi pi-calendar-plus" (click)="carregarDados(p)" (click)="openModal(Os)" class="p-button-rounded p-button-success"></button>
           <button pButton pRipple type="button" icon="pi pi-search" (click)="openModal(historico)" class="p-button-rounded p-button-success"></button>
         </td>
       </tr>
@@ -41,13 +41,13 @@
   </div>
   <div class="modal-body">
     <label for="Status">Selecione o novo status</label>
-    <select name="status" id="status" #status>
+    <select name="Status" id="Status" on-change="atribuirStatus(a.value)"#a>
       <option value="">Selecione o novo status</option>
-      <option value="{{i}}" *ngIf="let status of OptionStatus; let i of index " ></option>
+      <option value="{{status}}" *ngFor="let status of OptionStatus" >{{status}}</option>
     </select>
 
   </div>
-  <button pButton pRipple class="p-button-rounded" label="Salvar"></button>
+  <button pButton pRipple class="p-button-rounded" (click)="alterar()" label="Salvar"></button>
 </ng-template>
 
 <ng-template #historico>

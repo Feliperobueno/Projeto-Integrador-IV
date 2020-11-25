@@ -20,7 +20,7 @@
             <td>{{p.descricao}}</td>
             <td>{{p.status}}</td>
             <td>
-              <button pButton pRipple type="button" label="Aceitar" (click)="openModal(template)" class="p-button-rounded"></button>
+              <button pButton pRipple type="button" label="Aceitar" (click)="carregarDados(p)"(click)="openModal(template)" class="p-button-rounded"></button>
 
             </td>
           </tr>     
@@ -38,7 +38,7 @@
       </div>
       <div class="modal-body">
         <label for="funcionarios">Funcionario</label>
-        <select name="funcionarios" id="funcionarios" on-change="atribuirServico(a.value)" #a>
+        <select name="funcionarios" id="funcionarios" on-change="atribuirFuncionario(a.value)" #a>
           <option value="">Selecione o funcionario</option>
           <option *ngFor="let p of listaFuncionario" value="{{p.id}}">{{p.nome}}</option>
         </select>
@@ -49,6 +49,6 @@
           <option *ngFor="let p of listaServico" value="{{p.id}}">{{p.descricao}}</option>
         </select>
 
-        <button pButton pRipple type="button" label="Salvar" (click) = "atualizarHitorico()" class="p-button-rounded"(click)="modalRef.hide()"></button>
+        <button pButton pRipple type="button" label="Salvar" (click)="alterar()"  class="p-button-rounded"(click)="modalRef.hide()"></button>
       </div>
     </ng-template>

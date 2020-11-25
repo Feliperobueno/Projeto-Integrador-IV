@@ -4,22 +4,27 @@
     <thead class="cabeçalho">
       <tr>
         <th scope="col">Código O.S.</th>
+        <th scope="col">Nome do Cliente</th>
+        <th scope="col">Serviço</th>
+        <th scope="col">Sala/Laboratório</th>
+        <th scope="col">Equipamento</th>
         <th scope="col">Data</th>
         <th scope="col">Status</th>
-        <th scope="col">Funcionario</th>
       </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let p of lista">
-        <td scope="row">{{p.id}}</td>
-        <td>{{p.ordemServico.id}}</td>
-        <td>{{p.data}}</td>
-        <td>{{p.status}}</td>
-        <td>{{p.funcionario.nome}}</td>
 
-      </tr>
-    </tbody>
-  </table>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of lista">
+      <td scope="row">{{p.id}}</td>
+      <td>{{p.cliente.nome}}</td>
+      <td>{{p.tipoServico.descricao}}</td>
+      <td>{{p.laboratorioSala.nome}}</td>
+      <td>{{p.equipamento.nome}}</td>
+      <td>{{p.dataEmissao}}</td>
+      <td>{{p.status}}</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 

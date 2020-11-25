@@ -11,7 +11,7 @@ export class AppComponent {
 
   constructor(private router: Router) { }
   exibindoMenu() {
-    console.log(this.router.url)
+    //console.log(this.router.url)
     return this.router.url !== '/login' 
               && this.router.url !== '/'
               && this.router.url !== '/cadastro'
@@ -29,7 +29,7 @@ export class AppComponent {
 
   }
   exibindoMenuFun() {
-    console.log(this.router.url)
+    //console.log(this.router.url)
     return this.router.url !== '/login'
               && this.router.url !== '/' 
               && this.router.url !== '/cadastro'

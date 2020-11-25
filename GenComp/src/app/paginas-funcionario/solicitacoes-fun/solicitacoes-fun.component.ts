@@ -32,10 +32,13 @@ export class SolicitacoesFunComponent implements OnInit {
   perfil: string = "Funcionario"
   listaFuncionario: Pessoa[] = [];
   objServicoSel: TipoServico = new TipoServico();
+  objServicoSel2: TipoServico = new TipoServico();
   objFuncionarioSel: Pessoa = new Pessoa();
+  objFuncionarioSel2: Pessoa = new Pessoa();
   listaServico: TipoServico[] = [];
   now = new Date;
   status="Aberto";
+  id: number;
 
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService, private api:OrdemServicoService, private api2: TipoServicoService, private api3: PessoaService, private api4: HistoricoService, private messageService: MessageService) {}
@@ -48,6 +51,7 @@ export class SolicitacoesFunComponent implements OnInit {
     this.consultar();
     this.consultarTipoServico();
     this.consultarPorPerfil();
+    
   }
 
   consultar(){
@@ -78,6 +82,12 @@ export class SolicitacoesFunComponent implements OnInit {
   }
 
   alterar(){
+    //this.consultarServicoid();
+    //this.consultarFuncionarioId();
+
+    console.log(this.obj);
+
+
     this.obj.tipoServico = this.objServicoSel;
     this.obj.funcionario = this.objFuncionarioSel;
 
@@ -98,9 +108,32 @@ export class SolicitacoesFunComponent implements OnInit {
     });
   }
 
+  consultarServicoid(){
+    this.api2.consultarPorId(this.objServicoSel.id)
+    .toPromise()
+    .then
+    (res =>{
+      this.objServicoSel2 = res;
+    });
+
+    console.log(`Servico: ${this.objServicoSel2.descricao}`);
+  }
+
+  consultarFuncionarioId(){
+    this.api3.consultarPorId(1)
+    .toPromise()
+    .then
+    (res =>{
+      this.objFuncionarioSel2 = res;
+      console.log(res);
+    });
+    //console.log(`Funcionario: ${this.objFuncionarioSel.id}`);
+    console.log(`Funcionario: ${this.objFuncionarioSel2.nome}`);
+  }
+
   atribuirServico(id) {
     this.objServicoSel.id = id;
-    console.log(`Serviço: ${this.objServicoSel.id}`);
+    console.log(`Serviço: ${id}`);
   }
 
   atribuirFuncionario(id) {

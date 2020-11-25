@@ -96,7 +96,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     OrdemServicoService,
     PessoaService,
     TipoServicoService,
-    LoginService
+    LoginService,
+    HttpClientModule
     
 
   ],

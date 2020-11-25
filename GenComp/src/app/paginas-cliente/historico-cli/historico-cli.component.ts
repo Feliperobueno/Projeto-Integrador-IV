@@ -11,7 +11,7 @@ import { OrdemServicoService } from 'src/app/services/ordem-servico.service';
 })
 export class HistoricoCliComponent implements OnInit {
 
-  lista: Historico[] = [];
+  lista: OrdemServico[] = [];
   obj: Historico = new Historico();
   mens = '';
   listaOsCliente: OrdemServico[] = [];
@@ -24,7 +24,7 @@ export class HistoricoCliComponent implements OnInit {
   }
 
   consultar(){
-    this.api.consultar()
+    this.api2.consultar()
     .toPromise()
     .then
     (res =>{

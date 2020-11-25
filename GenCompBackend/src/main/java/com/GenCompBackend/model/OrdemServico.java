@@ -28,9 +28,9 @@ public class OrdemServico {
 	
 	private Pessoa funcionario;
 	
-	@ManyToOne
+	@ManyToOne()
 	@JoinColumn(name="id_cliente")
-	@NotNull
+	
 	private Pessoa cliente;
 	
 	@ManyToOne
@@ -52,12 +52,12 @@ public class OrdemServico {
 	private String status;
 	
 	@Column(name="descricao")
-	@NotNull
+	
 	private String descricao;
 	
 	@ManyToOne
 	@JoinColumn(name="id_local")
-	@NotNull
+	
 	private LaboratorioSala laboratorioSala;
 	
 	@ManyToOne

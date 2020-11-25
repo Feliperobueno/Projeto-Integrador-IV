@@ -7,7 +7,7 @@
 
             <div class="inputs">
                 <label for="equipamento">Equipamento</label>
-                <select name="equipamento"  id="equipamento" on-change="atribuirEquipamento(a.value)" #a >
+                <select name="equipamento"  id="equipamento" >
                     <option value="">Selecione em qual equipamento deve ser executado</option>
                     <option *ngFor="let p of listaEquipamento" value="{{p.id}}">{{p.nome}}</option>
                 </select>
@@ -21,7 +21,7 @@
 
             <div class="inputs">
                 <label for="sala">Local</label>
-                <select name="local" id="local" on-change="atribuirLocal(b.value)" #b>
+                <select name="local" id="local">
                     <option value="">Selecione em qual sala deve ser executado</option>
                     <option *ngFor="let p of listaLocal" value="{{p.id}}">{{p.nome}}</option>
                 </select>

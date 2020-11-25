@@ -43,14 +43,10 @@ export class SolicitacoesCliComponent implements OnInit {
   objPessoaSel: Pessoa = new Pessoa();
   mens = '';
 
-  constructor(private api:OrdemServicoService, private api2:TipoServicoService, private api3:EquipamentoService, private api4:LaboratorioSalaService, private api5:PessoaService, private messageService: MessageService) { }
+  constructor(private api:OrdemServicoService, private api3:EquipamentoService, private api4:LaboratorioSalaService, private api5:PessoaService, private messageService: MessageService) { }
 
   ngOnInit(): void {
-     this.consultar();
-     this.consultarEquipamento();
-     this.consultarLocal();
-     this.consultarTipoServico();
-
+    this.consultar();
   }
 
   consultar(){
@@ -61,31 +57,28 @@ export class SolicitacoesCliComponent implements OnInit {
       this.lista = res;
     });
   }
-
   
 
   adicionar(){
-    this.consultarEquipamentoid();
-    this.consultarLocalid();
-    this.consultarClienteid();
-    this.obj.laboratorioSala = this.objLocalSel2;
-    this.obj.equipamento = this.objEquipamentoSel2;
-    this.obj.cliente = this.objPessoaSel;
-    this.obj.status = "Aberto";
+    this.obj.equipamento.id = 1;
+    this.obj.laboratorioSala.id = 1;
+    this.obj.cliente.id=2;
     this.api.adicionar(this.obj)
     .toPromise()
     .then(ordemServico => {
-      this.mens = "A O.S id " + ordemServico.id + " foi adicionado(a) com sucesso!";
+      this.mens = ordemServico.id + " foi adicionado(a) com sucesso!";
       this.consultar();
     });
     this.messageService.add({severity:'success', summary: 'Success', detail: 'Cadastrado com sucesso'});
+    
+
   }
 
   excluir(){
     this.api.excluir(this.obj.id)
     .toPromise()
     .then(ordemServico => {
-      this.mens = "A O.S. excluida com sucesso!";
+      this.mens = "OS excluida com sucesso!";
       this.consultar();
     });
   }
@@ -94,79 +87,9 @@ export class SolicitacoesCliComponent implements OnInit {
     this.api.alterar(this.obj.id,this.obj)
     .toPromise()
     .then(ordemServico => {
-      this.mens = "A O.S id " + ordemServico.id + + " alterado(a) com sucesso!";
+      this.mens = ordemServico.id + " alterado(a) com sucesso!";
       this.consultar();
     })
-  }
-
-  consultarTipoServico(){
-    this.api2.consultar()
-    .toPromise()
-    .then
-    (res =>{
-      this.listaServico = res;
-    });
-  }
-
-  atribuirServico(id) {
-    this.objServicoSel.id = id;
-    console.log(`Serviço: ${this.objEquipamentoSel.nome}`);
-  }
-
-
-  consultarEquipamento(){
-    this.api3.consultar()
-    .toPromise()
-    .then
-    (res =>{
-      this.listaEquipamento = res;
-    });
-  }
-
-  consultarEquipamentoid(){
-    this.api3.consultarPorId( this.objEquipamentoSel.id)
-    .toPromise()
-    .then
-    (res =>{
-      this.objEquipamentoSel2 = res;
-    });
-  }
-
-  consultarClienteid(){
-    this.api5.consultarPorId(2)
-    .toPromise()
-    .then
-    (res =>{
-      this.objPessoaSel = res;
-    });
-  }
-
-  consultarLocalid(){
-    this.api4.consultarPorId( this.objLocalSel.id)
-    .toPromise()
-    .then
-    (res =>{
-      this.objLocalSel2 = res;
-    });
-  }
-
-  atribuirEquipamento(id) {
-    this.objEquipamentoSel.id = id;
-    console.log(`Equipamento: ${this.objEquipamentoSel.id}`);
-  }
-
-  consultarLocal(){
-    this.api4.consultar()
-    .toPromise()
-    .then
-    (res =>{
-      this.listaLocal = res;
-    });
-  }
-
-  atribuirLocal(id) {
-    this.objLocalSel.id = id;
-    console.log(`Local: ${id}`);
   }
 
   carregarDados(p: OrdemServico){

@@ -26,6 +26,7 @@ export class HistoricoFunComponent implements OnInit {
   idFunc: number;
   listaFuncionario: OrdemServico[] = [];
   modalRef: BsModalRef;
+  statusSel: string;
 
   constructor(private api2: OrdemServicoService, private ap1: PessoaService, private api3: TipoServicoService,private modalService: BsModalService, private messageService: MessageService) { }
 
@@ -73,12 +74,14 @@ export class HistoricoFunComponent implements OnInit {
     this.messageService.add({severity:'error', summary: 'Success', detail: 'Excluido com sucesso'});
   }
 
-  alterar(){
-    this.obj.status =  this.OptionStatus[this.opcaoSel];
-    if(this.obj.status == "Finalizado"){
+  atribuirStatus(status) {
+    this.statusSel = String(status);
+    console.log(`Funcionario: ${this.statusSel}`);
+  }
 
-      this.obj.dataFechamento = new Date();
-    }
+  alterar(){
+    this.obj.status =  this.statusSel;
+    
 
     this.api2.alterar(this.obj.id,this.obj)
     .toPromise()
