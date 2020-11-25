@@ -42,6 +42,8 @@ import {ToggleButtonModule} from 'primeng/togglebutton';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { EquipamentoService } from './services/equipamento.service';
 import { TipoServicoService } from './services/tipo-servico.service';
+import { ToastModule } from 'primeng/toast';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -82,7 +84,9 @@ import { TipoServicoService } from './services/tipo-servico.service';
     TableModule,
     ToggleButtonModule,
     ModalModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
 
   providers: [

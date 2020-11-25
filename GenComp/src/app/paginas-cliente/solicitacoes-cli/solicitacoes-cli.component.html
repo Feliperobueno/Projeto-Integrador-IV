@@ -3,20 +3,12 @@
 
     <form name="solicitacao" id="solicitacao" #solicitacao >
         <div>
-            <div class="inputs">
-                <label for="servico">Selecione o tipo de serviço</label>
-                <Select name="servico"  id="servico" on-change="atribuirServico(a.value)" #a required>
-                    <option value="" >Selecione o tipo de serviço a ser executado</option>
-                    <option *ngFor="let p of listaServico" value="{{p}}">{{p.descricao}}</option>
-                </Select>
-
-            </div>
 
             <div class="inputs">
                 <label for="equipamento">Equipamento</label>
-                <select name="equipamento"  id="equipamento" on-change="atribuirEquipamento(a.value)" #a required>
+                <select name="equipamento"  id="equipamento" on-change="atribuirEquipamento(a.value)" #a >
                     <option value="">Selecione em qual equipamento deve ser executado</option>
-                    <option *ngFor="let p of listaEquipamento" value="{{p}}">{{p.nome}}</option>
+                    <option *ngFor="let p of listaEquipamento" value="{{p.id}}">{{p.nome}}</option>
                 </select>
 
             </div>
@@ -28,16 +20,16 @@
 
             <div class="inputs">
                 <label for="sala">Local</label>
-                <select name="" id="sala" on-change="atribuirLocal(a.value)" #a required>
+                <select name="local" id="local" on-change="atribuirLocal(b.value)" #b>
                     <option value="">Selecione em qual sala deve ser executado</option>
-                    <option *ngFor="let p of listaLocal" value="{{p}}">{{p.nome}}</option>
+                    <option *ngFor="let p of listaLocal" value="{{p.id}}">{{p.nome}}</option>
                 </select>
 
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <textarea name="descricao" type="text" minlength="30" maxlength="250" pInputText id="obj.descricao" [(ngModel)]="descricao" autocomplete="new-password"></textarea>
+                    <textarea name="descricao" type="text" minlength="30" maxlength="250" pInputText id="descricao" [(ngModel)]="obj.descricao" autocomplete="new-password"></textarea>
                     <label for="descricao">Digite em breves palavras o problema a ser resolvido</label>
                 </span>
             </div>

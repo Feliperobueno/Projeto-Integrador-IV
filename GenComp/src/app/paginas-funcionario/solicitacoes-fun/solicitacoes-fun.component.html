@@ -1,4 +1,4 @@
-<div class="p-grid p-fluid">
+<div class="container">
     <h1>Novas solicitações</h1>
     <table class="table table-hover">
         <thead class="cabeçalho">
@@ -40,13 +40,13 @@
         <label for="funcionarios">Funcionario</label>
         <select name="funcionarios" id="funcionarios" on-change="atribuirServico(a.value)" #a>
           <option value="">Selecione o funcionario</option>
-          <option *ngFor="let p of listaFuncionario" value="{{p}}">{{p.nome}}</option>
+          <option *ngFor="let p of listaFuncionario" value="{{p.id}}">{{p.nome}}</option>
         </select>
 
         <label for="servico">Serviço</label>
-        <select name="servico" id="servico" on-change="atribuirServico(a.value)" #a>
+        <select name="servico" id="servico" on-change="atribuirServico(b.value)" #b>
           <option value="">Selecione o serviço</option>
-          <option *ngFor="let p of listaServico" value="{{p}}">{{p.descricao}}</option>
+          <option *ngFor="let p of listaServico" value="{{p.id}}">{{p.descricao}}</option>
         </select>
 
         <button pButton pRipple type="button" label="Salvar" (click) = "atualizarHitorico()" class="p-button-rounded"(click)="modalRef.hide()"></button>

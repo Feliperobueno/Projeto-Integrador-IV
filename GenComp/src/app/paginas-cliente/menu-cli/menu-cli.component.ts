@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu-cli',
@@ -12,9 +13,15 @@ export class MenuCliComponent implements OnInit {
   titulo = 'GenComp';
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  sair(){
+
+    this.router.navigate(['/login'])
+
   }
 
 }

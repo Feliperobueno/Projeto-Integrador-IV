@@ -26,12 +26,14 @@ export class PerfilCliComponent implements OnInit {
 
   lista: Pessoa[] = [];
   obj: Pessoa = new Pessoa();
+  objPessoaSel: Pessoa = new Pessoa();
   mens = '';
 
   constructor(private api: PessoaService) { }
 
   ngOnInit(): void {
     this.consultar();
+    this.consultarClienteid()
   }
 
   consultar(){
@@ -40,6 +42,15 @@ export class PerfilCliComponent implements OnInit {
     .then
     (res =>{
       this.lista = res;
+    });
+  }
+
+  consultarClienteid(){
+    this.api.consultarPorId(2)
+    .toPromise()
+    .then
+    (res =>{
+      this.objPessoaSel = res;
     });
   }
 
@@ -62,7 +73,7 @@ export class PerfilCliComponent implements OnInit {
   }
 
   alterar(){
-    this.api.alterar(this.obj.id,this.obj)
+    this.api.alterar(this.objPessoaSel.id,this.objPessoaSel)
     .toPromise()
     .then(pessoa => {
       this.mens = pessoa.nome + " alterado(a) com sucesso!";

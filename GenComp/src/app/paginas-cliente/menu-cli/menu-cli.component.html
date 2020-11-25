@@ -41,19 +41,12 @@
       </ul>
       <div class="NomeUsuario">{{ nomeUsuario }}
         <br>
-        <button pButton pRipple type="button" label="Sair" class="p-button-danger p-button-text"></button>
+        <button pButton pRipple type="button" label="Sair" (click)="sair()" class="p-button-danger p-button-text"></button>
       </div>
     </div>
   </div>
   
-  <div id="conteudo">
-    <section>
-      <router-outlet>
   
-      </router-outlet>
-    </section>
-  
-  </div>
   
   
 

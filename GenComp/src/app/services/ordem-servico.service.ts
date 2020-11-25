@@ -39,9 +39,9 @@ export class OrdemServicoService {
     return this.http.get<OrdemServico[]>(urlLocal);
   }
 
-  consultarOsPorCli(id: number): Observable<OrdemServico>{
+  consultarOsPorCli(id: number): Observable<OrdemServico[]>{
     const urlLocal = `${url3}/${id}`;
-    return this.http.get<OrdemServico>(urlLocal);
+    return this.http.get<OrdemServico[]>(urlLocal);
   }
 
   adicionar(OrdemServico): Observable<OrdemServico>{

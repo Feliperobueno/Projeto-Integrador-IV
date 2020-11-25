@@ -1,17 +1,17 @@
-<div class="p-grid p-fluid">
+<div class="container">
     <h1>Perfil</h1>
     <div>
         <form name="cadastroFun" class="was-validated">
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="nome" autocomplete="name" disabled> 
+                    <input name="nome" type="text" minlength="3" id="nome" pInputText [(ngModel)]="objPessoaSel.nome" autocomplete="name" disabled> 
                     <label for="nome">Nome completo</label>
                 </span>
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="cpf_cnpj" mask="000.000.000-00 || 00.000.000/0000-00" disabled>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" pInputText [(ngModel)]="objPessoaSel.cpfCnpj" mask="000.000.000-00 || 00.000.000/0000-00" disabled>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>
@@ -19,14 +19,14 @@
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="email" required autocomplete="email"> 
+                    <input name="email" type="email" minlength="5" id="email" pInputText [(ngModel)]="objPessoaSel.email" required autocomplete="email"> 
                     <label for="email">Digite o E-mail</label>
                 </span>
             </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000">
+                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="objPessoaSel.telefone" mask="(00) 0000-0000 ||(00)00000-0000">
                     <label for="telefone">Telefone</label>
                 </span> 
             </div>
@@ -34,22 +34,21 @@
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="usuario" required autocomplete="username" disabled> 
+                    <input name="user" type="text" minlength="5" id="user" pInputText [(ngModel)]="objPessoaSel.login" required autocomplete="username" disabled> 
                     <label for="user">Usuário</label>
                 </span>
             </div>
 
             <div class="inputs">
-                <label for="funcoes">Funções</label>
-                <select name="funcoes" id="funcoes" required [(ngModel)]="funcaoFun">
-                    <option value="">Selecione a função do funcionario</option>
-                    <option *ngFor="let funcao of funcoes">{{ funcao }}</option>
-                </select>
-            </div>
+                <span class="p-float-label">
+                    <input name="funcao" type="text" minlength="3" id="funcao" pInputText [(ngModel)]="objPessoaSel.funcao" autocomplete="name" required> 
+                    <label for="funcao">Função</label>
+                </span>
+              </div>
 
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="password" autocomplete="new-password"/>
+                    <input name="password" type="password" minlength="4" maxlength="16" pPassword id="password" [(ngModel)]="objPessoaSel.senha" autocomplete="new-password"/>
                     <label for="password">Digite a nova senha</label>
                 </span>
             </div>
@@ -62,7 +61,7 @@
             </div>
 
 
-            <button pButton pRipple type="button" label="Cadastrar" class="p-button-rounded "[disabled]="password != confirmPassword"></button>
+            <button pButton pRipple type="button" label="Cadastrar" (click) = "alterar()" class="p-button-rounded "[disabled]="password != confirmPassword"></button>
         </form>
     </div>
 </div>

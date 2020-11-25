@@ -1,4 +1,4 @@
-<div class="p-grid p-fluid">
+<div class="container">
     <h1>Cadastro de novos funcionários</h1>
     <div>
         <form name="cadastroFun" >
@@ -10,7 +10,7 @@
             </div>
             <div class="inputs">
                 <span class="p-float-label">
-                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" type="text" pInputText [(ngModel)]="obj.cpfcnpj" mask="000.000.000-00 || 00.000.000/0000-00" required>
+                    <input name="cpf_cnpj" id="CPF/CNPJ" minlength="11" type="text" pInputText [(ngModel)]="obj.cpfCnpj" mask="000.000.000-00 || 00.000.000/0000-00" required>
                     <label for="CPF/CNPJ">CPF ou CNPJ</label>
                 </span> 
             </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="inputs">
                 <span class="p-float-label">
-                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="obj.telefone" mask="(00) 0000-0000 ||(00) 0 0000-0000" autocomplete="tel">
+                    <input id="telefone" type="telefone" name="telefone" pInputText [(ngModel)]="obj.telefone" mask="(00) 0000-0000 ||(00)00000-0000" autocomplete="tel">
                     <label for="telefone">Telefone</label>
                 </span> 
             </div>
@@ -55,7 +55,7 @@
                 </span>
             </div>
 
-            <button pButton pRipple type="button" label="Cadastrar" (click)="adicionar()" class="p-button-rounded "[disabled]="password != confirmPassword"></button>
+            <button pButton pRipple type="button" label="Cadastrar" (click)="adicionar()" class="p-button-rounded"></button>
         </form>
     </div>
 </div>

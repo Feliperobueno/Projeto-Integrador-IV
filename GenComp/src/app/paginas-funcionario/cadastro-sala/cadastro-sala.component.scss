@@ -1,29 +1,73 @@
-.p-button{
+.container .was-validated{
+    .p-button{
     width: 100%;
     margin-top: 5%;
     font-size: 1.3em;
     background-color: hsla(210, 100%, 45%, 1);
     color: white;
-}
-.p-button:hover{
+    }
+    .p-button:hover{
     background-color: #008000;
     transition-duration: 0.8s;
-    border: 1px solid  #008000;
-}
-
-.cadastro{
+    border: 1px solid #008000;
+    }
+    
+    .cadastro{
     margin-top: 5%;
-}
-
-input{
+    }
+    
+    input{
     width: 100%;
-    border:  none;
-    border-bottom: 1px solid  #cecbcb;
+    border: none;
+    border-bottom: 1px solid #cecbcb;
     height: 50px;
-}
-
-
-h1{
-    color:  hsla(210, 100%, 45%, 1);
+    }
+    
+    
+    h1{
+    color: hsla(210, 100%, 45%, 1);
     text-align: center;
-}
+    }
+    
+    }
+    
+    
+    
+    h4{
+    color: hsla(210, 100%, 45%, 1);
+    text-align: center;
+    margin-top: 10%;
+    }
+    
+    th{
+    background-color: hsla(210, 100%, 45%, 1);
+    color: white;
+    }
+    
+    table{
+    margin-top: 5%;
+    }
+    
+    .modal-body{
+    
+    span{
+    margin-top: 5%;
+    }
+    input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cecbcb;
+    height: 50px;
+    }
+    
+    button{
+    margin-top: 10%;
+    width: 100%;
+    }
+    
+    h4{
+    color: hsla(210, 100%, 45%, 1);
+    text-align: center;
+    margin-top: 10%;
+    }
+    }

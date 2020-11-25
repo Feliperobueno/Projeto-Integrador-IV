@@ -1,6 +1,8 @@
+import { OrdemServico } from './../../models/ordem-servico.model';
 import { HistoricoService } from './../../services/historico.service';
 import { Component, OnInit } from '@angular/core';
 import { Historico } from 'src/app/models/historico.model';
+import { OrdemServicoService } from 'src/app/services/ordem-servico.service';
 
 @Component({
   selector: 'app-historico-cli',
@@ -12,9 +14,10 @@ export class HistoricoCliComponent implements OnInit {
   lista: Historico[] = [];
   obj: Historico = new Historico();
   mens = '';
+  listaOsCliente: OrdemServico[] = [];
 
 
-  constructor(private api:HistoricoService) { }
+  constructor(private api:HistoricoService, private api2:OrdemServicoService) { }
 
   ngOnInit(): void {
     this.consultar();
@@ -28,6 +31,16 @@ export class HistoricoCliComponent implements OnInit {
       this.lista = res;
     });
   }
+
+  consultarOsCliente(){
+    this.api2.consultarOsPorCli(2)
+    .toPromise()
+    .then
+    (res =>{
+      this.listaOsCliente = res;
+    });
+  }
+
 
   adicionar(){
     this.api.adicionar(this.obj)

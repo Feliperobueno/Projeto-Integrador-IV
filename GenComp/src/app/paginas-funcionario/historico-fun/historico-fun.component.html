@@ -73,10 +73,10 @@
       <tbody>
         <tr *ngFor="let p of listaOs">
           <td scope="row">{{p.id}}</td>
+          <td>{{p.ordemServico.id}}</td>
           <td>{{p.dataEmissao}}</td>
-          <td>p.cliente.nome</td>
-          <td>p.descricao</td>
-          <td>p.status</td>
+          <td>{{p.status}}</td>
+          <td>{{p.funcionario.nome}}</td>
         </tr>
       </tbody>
     </table>

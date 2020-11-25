@@ -1,4 +1,6 @@
-<div class="p-grid p-fluid">
+<p-toast></p-toast>
+
+<div class="container">
     <form action="" id="equipamentos"  class="was-validated">
         <h1>Cadastro de novas salas</h1>
             <div class="cadastro">
@@ -10,4 +12,49 @@
                 <button pButton pRipple type="button" label="Cadastrar" (click)="adicionar()" class="p-button-rounded"></button>
             </div>
         </form>
+
+        <h4>Salas cadastradas anteriormente</h4>
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col" >Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of lista">
+                <td>{{p.id}}</td>
+                <td>{{p.nome}}</td>
+                <td >
+                    <div style="float: left; width: 40px;">
+                    <button pButton pRipple type="button" style="float: left;" icon="pi pi-user-edit" (click)="carregarDados(p)"(click)="openModal(sala)" class="p-button-rounded p-button-success" >
+
+                    </button>
+                    </div>
+
+                    <div style="float: left; width: 40px; margin-left: 5%;">
+                    <button pButton pRipple type="button" icon="pi pi-trash" (click)="carregarDados(p)" (click)="excluir()" class="p-button-rounded p-button-danger"></button>
+                </div>
+                </td>
+              </tr>
+          </table>
 </div>
+
+<ng-template #sala>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Alterar sala</h4>
+      <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger" (click)="modalRef.hide()"></button>
+      
+    </div>
+    <div class="modal-body">
+
+      <span class="p-float-label">
+                    <input name="equipamentos" type="text" minlength="3" id="equipamento" pInputText [(ngModel)]="obj2.nome" required> 
+                    <label for="inputtext">Nome da sala</label>
+        </span>
+
+        <button pButton pRipple type="button" label="Alterar" (click)="alterar()" class="p-button-rounded"></button>
+    </div>
+  </ng-template>
+

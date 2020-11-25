@@ -96,14 +96,14 @@ export class SolicitacoesFunComponent implements OnInit {
     });
   }
 
-  atribuirServico(servico:TipoServico) {
-    this.objServicoSel = servico;
-    console.log(`Serviço: ${this.objServicoSel.descricao}`);
+  atribuirServico(id) {
+    this.objServicoSel.id = id;
+    console.log(`Serviço: ${this.objServicoSel.id}`);
   }
 
-  atribuirFuncionario(funcionario:Pessoa) {
-    this.objFuncionarioSel = funcionario;
-    console.log(`Serviço: ${this.objServicoSel.descricao}`);
+  atribuirFuncionario(id) {
+    this.objFuncionarioSel.id = id;
+    console.log(`Funcionario: ${this.objFuncionarioSel.id}`);
   }
 
 

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 import { OrdemServicoService } from 'src/app/services/ordem-servico.service';
 import { TipoServicoService } from 'src/app/services/tipo-servico.service';
 import { EquipamentoService } from 'src/app/services/equipamento.service';
+import { PessoaService } from 'src/app/services/pessoa.service';
+import { Pessoa } from 'src/app/models/pessoa.model';
 
 
 @Component({
@@ -32,17 +34,20 @@ export class SolicitacoesCliComponent implements OnInit {
   listaLocal: LaboratorioSala[] = [];
   obj: OrdemServico = new OrdemServico();
   objEquipamentoSel: Equipamento = new Equipamento();
+  objEquipamentoSel2: Equipamento = new Equipamento();
   objServicoSel: TipoServico = new TipoServico();
   objLocalSel: LaboratorioSala = new LaboratorioSala();
+  objLocalSel2: LaboratorioSala = new LaboratorioSala();
+  objPessoaSel: Pessoa = new Pessoa();
   mens = '';
 
-  constructor(private api:OrdemServicoService, private api2:TipoServicoService, private api3:EquipamentoService, private api4:LaboratorioSalaService) { }
+  constructor(private api:OrdemServicoService, private api2:TipoServicoService, private api3:EquipamentoService, private api4:LaboratorioSalaService, private api5:PessoaService) { }
 
   ngOnInit(): void {
      this.consultar();
      this.consultarEquipamento();
      this.consultarLocal();
-     this.consultarTipoServico
+     this.consultarTipoServico();
 
   }
 
@@ -55,11 +60,16 @@ export class SolicitacoesCliComponent implements OnInit {
     });
   }
 
+  
+
   adicionar(){
-    this.obj.tipoServico = this.objServicoSel;
-    this.obj.laboratorioSala = this.objLocalSel;
-    this.obj.equipamento = this.objEquipamentoSel;
-    this.obj.cliente.id = 1;
+    this.consultarEquipamentoid();
+    this.consultarLocalid();
+    this.consultarClienteid();
+    this.obj.laboratorioSala = this.objLocalSel2;
+    this.obj.equipamento = this.objEquipamentoSel2;
+    this.obj.cliente = this.objPessoaSel;
+    this.obj.status = "Aberto";
     this.api.adicionar(this.obj)
     .toPromise()
     .then(ordemServico => {
@@ -95,8 +105,8 @@ export class SolicitacoesCliComponent implements OnInit {
     });
   }
 
-  atribuirServico(servico:TipoServico) {
-    this.objServicoSel = servico;
+  atribuirServico(id) {
+    this.objServicoSel.id = id;
     console.log(`Serviço: ${this.objEquipamentoSel.nome}`);
   }
 
@@ -110,9 +120,36 @@ export class SolicitacoesCliComponent implements OnInit {
     });
   }
 
-  atribuirEquipamento(equip:Equipamento) {
-    this.objEquipamentoSel = equip;
-    console.log(`Equipamento: ${this.objEquipamentoSel.nome}`);
+  consultarEquipamentoid(){
+    this.api3.consultarPorId( this.objEquipamentoSel.id)
+    .toPromise()
+    .then
+    (res =>{
+      this.objEquipamentoSel2 = res;
+    });
+  }
+
+  consultarClienteid(){
+    this.api5.consultarPorId(2)
+    .toPromise()
+    .then
+    (res =>{
+      this.objPessoaSel = res;
+    });
+  }
+
+  consultarLocalid(){
+    this.api4.consultarPorId( this.objLocalSel.id)
+    .toPromise()
+    .then
+    (res =>{
+      this.objLocalSel2 = res;
+    });
+  }
+
+  atribuirEquipamento(id) {
+    this.objEquipamentoSel.id = id;
+    console.log(`Equipamento: ${this.objEquipamentoSel.id}`);
   }
 
   consultarLocal(){
@@ -124,9 +161,9 @@ export class SolicitacoesCliComponent implements OnInit {
     });
   }
 
-  atribuirLocal(local:LaboratorioSala) {
-    this.objLocalSel = local;
-    console.log(`Local: ${this.objLocalSel.nome}`);
+  atribuirLocal(id) {
+    this.objLocalSel.id = id;
+    console.log(`Local: ${id}`);
   }
 
   carregarDados(p: OrdemServico){

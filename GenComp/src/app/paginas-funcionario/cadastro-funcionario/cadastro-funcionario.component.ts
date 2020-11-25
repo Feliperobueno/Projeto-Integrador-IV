@@ -51,6 +51,9 @@ export class CadastroFuncionarioComponent implements OnInit {
   }
 
   adicionar(){
+
+    this.obj.perfil="Funcionario";
+
     this.api.adicionar(this.obj)
     .toPromise()
     .then(pessoa => {

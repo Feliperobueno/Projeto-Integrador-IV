@@ -1,7 +1,7 @@
 export class Pessoa {
     id: number;
     nome: string;
-    cpfcnpj: string;
+    cpfCnpj: string;
     telefone: string;
     email: string;
     funcao: string;

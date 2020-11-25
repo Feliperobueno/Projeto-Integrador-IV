@@ -4,6 +4,8 @@ import { OrdemServico } from './../../models/ordem-servico.model';
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Historico } from 'src/app/models/historico.model';
 import { HistoricoService } from 'src/app/services/historico.service';
+import { PessoaService } from 'src/app/services/pessoa.service';
+import { TipoServicoService } from 'src/app/services/tipo-servico.service';
 
 @Component({
   selector: 'app-historico-fun',
@@ -23,7 +25,7 @@ export class HistoricoFunComponent implements OnInit {
   listaFuncionario: OrdemServico[] = [];
   modalRef: BsModalRef;
 
-  constructor(private api2: OrdemServicoService, private modalService: BsModalService) { }
+  constructor(private api2: OrdemServicoService, private ap1: PessoaService, private api3: TipoServicoService,private modalService: BsModalService) { }
 
   ngOnInit(): void {
     this.consultar();

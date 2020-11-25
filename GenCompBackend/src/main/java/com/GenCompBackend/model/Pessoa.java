@@ -28,13 +28,13 @@ public class Pessoa {
 	private String nome;
 	
 	@Column(name="cpfcnpj")
-	@NotNull
-	@CpfCnpjAnotation
+	//@NotNull
+	//@CpfCnpjAnotation
 	private String cpfCnpj;
 	
 	@Column(name="telefone")
 	@NotNull
-	@TelefoneAnotation
+	//s@TelefoneAnotation
 	private String telefone;
 	
 	@Column(name="email")

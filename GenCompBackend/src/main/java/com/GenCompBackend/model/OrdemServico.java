@@ -25,7 +25,7 @@ public class OrdemServico {
 	
 	@ManyToOne
 	@JoinColumn(name="id_funcionario")
-	@NotNull
+	
 	private Pessoa funcionario;
 	
 	@ManyToOne
@@ -48,7 +48,7 @@ public class OrdemServico {
 	private Date dataFechamento;
 	
 	@Column(name="status")
-	@NotNull
+	
 	private String status;
 	
 	@Column(name="descricao")
