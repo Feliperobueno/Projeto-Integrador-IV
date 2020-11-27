@@ -40,7 +40,7 @@ export class CadastroSalaComponent implements OnInit {
   }
 
   adicionar(){
-    this.api.adicionar(this.obj)
+    this.api.adicionar(this.obj.id)
     .toPromise()
     .then(LaboratorioSala => {
       this.mens = LaboratorioSala.nome + " foi adicionado(a) com sucesso!";
